@@ -24,7 +24,7 @@ Ecar::Ecar(char *targaInput, int pesoInput, int potenzaInput) :
 	standards.push_back(230);
 	standards.push_back(380);
 
-	printStandards();
+	printResumee();
 }
 
 Ecar::~Ecar() {
@@ -39,7 +39,7 @@ short Ecar::getCapBat() {
 /*
  * Stampa degli standard sfruttando iteratore su STL vector
  */
-void Ecar::printStandards() {
+void Ecar::printResumee() {
 	cout << "Standards: ";
 	for (vector<int>::iterator it = standards.begin(); it != standards.end();
 			++it)
@@ -48,12 +48,11 @@ void Ecar::printStandards() {
 }
 
 void Ecar::showInfo() {
-	cout << "\nCAR DATA SUMMARY" << endl;
+	cout << "\nELECTRIC CAR DATA SUMMARY" << endl;
 	cout << "    Targa:  " << getTarga() << endl;
 	cout << "      VIN:  " << getVIN() << endl;
 	cout << "  Potenza:  " << getPotenza() << " kW" << endl;
 	cout << "     Peso:  " << getPeso() << " kg" << endl;
 	cout << "Batt. cap:  " << getCapBat() << " kWh" << endl;
-	printStandards();
-
+	printResumee();
 }

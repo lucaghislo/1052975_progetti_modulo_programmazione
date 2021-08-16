@@ -13,6 +13,8 @@ using namespace std;
 
 #include "Car.h"
 #include "Ecar.h"
+#include "FFcar.h"
+#include "TaxCalc.h"
 
 int main() {
 	/*
@@ -40,11 +42,22 @@ int main() {
 	cout << "Targa auto elettrica ec1: " << ec1->getTarga() << endl;
 	try {
 		ec1->setTarga("EL-101-LEEEEEEEEE");
-	} catch(int x) {
+	} catch (int x) {
 		cout << "Formato targa errato! Cannot update" << endl;
 	}
 	cout << "Targa auto elettrica ec1: " << ec1->getTarga() << endl;
 	ec1->showInfo();
 
-}
+	FFcar *ffc1 = new FFcar("ZA-044-ZB", 1200, 149, 50, 4.5, 5.5, 8.9);
+	cout << "Targa auto tradizionale ffc1: " << ffc1->getTarga() << endl;
+	try {
+		ffc1->setTarga("EL-101-LE");
+	} catch (int x) {
+		cout << "Formato targa errato! Cannot update" << endl;
+	}
+	cout << "Targa auto elettrica ffc1: " << ec1->getTarga() << endl;
+	ffc1->showInfo();
 
+	TaxCalc<double> tc(5.3);
+	cout << tc.calcoloBollo(ffc1) << endl;
+}

@@ -23,8 +23,8 @@ public:
 	Car(); // Metodo costruttore della classe
 
 	/*
-	 * Costruttore con parametri targa e potenza: di default la potenza viene impostata
-	 * al minimo valore di potenza definito nella classe Car
+	 * Costruttore con parametri targa, potenza e peso: di default la potenza viene
+	 * impostata al minimo valore di potenza definito nella classe Car
 	 */
 	Car(char *targaInput, int pesoInput = 1000, int potenzaInput =
 			Car::minPotenza);
@@ -38,6 +38,19 @@ public:
 	short getPeso(); // metodo per ottenere peso auto
 
 	void setTarga(string newTarga); // metodo per settare targa auto
+
+	/*
+	 * Prefisso virtual permette di implementare polimorfismo run-time.
+	 * Notazione "= 0" implica non implementazione del metodo nella classe
+	 * Car ma solo nelle sue classi derivate
+	 */
+	virtual void printResumee() = 0;
+
+	/*
+	 * Classe TaxCalc definita amica allo scopo di accedere al campo privato
+	 * potenza ed effettuare calcolo bollo auto
+	 */
+	template<typename> friend class TaxCalc;
 
 private:
 	/*
@@ -69,6 +82,7 @@ protected:
 	/*
 	 * Classe auto è una classe astratta: non può essere istanziata,
 	 * se non sotto forma delle sue classi derivate FFcar, Ecar e Hcar
+	 * (motivazione notazione "= 0")
 	 */
 	virtual void showInfo() = 0;
 

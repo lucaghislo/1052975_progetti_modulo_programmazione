@@ -10,7 +10,8 @@
 #include "Ecar.h"
 #include "FFcar.h"
 
-class Hcar: public Ecar, public FFcar {
+// : public Ecar, public FFcar
+class Hcar {
 public:
 	Hcar();
 private:

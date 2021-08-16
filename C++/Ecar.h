@@ -2,6 +2,7 @@
  * Ecar.h
  *
  * Classe derivata da Car che rappresenta l'auto elettrica
+ * (E: Electric)
  *
  *  Created on: 16 ago 2021
  *      Author: Luca Ghislotti
@@ -23,9 +24,13 @@ public:
 	 */
 	Ecar(vector<int> standardInput);
 	Ecar(char *targaInput, int pesoInput = 1500, int potenzaInput = 50);
-	void showInfo();
-	short getCapBat();
-	void printStandards();
+
+	/*
+	 * Prefisso virtual permette di implementare polimorfismo run-time
+	 */
+	virtual void showInfo();
+	virtual void printResumee();
+	short getCapBat(); // ottenimento capacità batteria
 
 private:
 	short capacitaBatteria; // parametro specifico per le auto elettriche (kWh)
