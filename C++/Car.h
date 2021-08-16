@@ -14,12 +14,14 @@ public:
 	Car(); // Metodo costruttore della classe
 
 	/*
-	 * Variabile statica della classe Car, comune a tutte le istanze della classe
-	 * (essendo classe astratta la variabile, rappresentante il prefisso del numero di telaio
-	 * dell'auto, sarà valore comune a tutte le istante delle classi derivate della classe Auto)
+	 * Metodo per costruire il numero di telaio sulla base del prefisso statico
+	 * comune a tutte le auto: nel caso in cui venga superato il numero massim
+	 * di auto immatricolabili (su 10 cifre del numero di telaio) viene sollevata
+	 * un'eccezione
 	 */
-	static int prefix = 0;
-	static short minPotenza = 30;
+	char* buildVIN(int prefix);
+
+	static const short minPotenza = 30;
 
 	/*
 	 * Distruttore virtuale della classe Car, essendo quest'ultima una classe astratta
@@ -31,7 +33,7 @@ private:
 	 * Metodo statico che incrementa il prefisso del numero di telaio nella forma di
 	 * variabile statica, comune a tutte le istanze
 	 */
-	virtual static void increasePrefix = 0;
+	void increasePrefix();
 	char *targa; // targa dell'automobile
 	char *numTelaio; // numero di telaio dell'automobile
 	short potenza; // potenza dell'automobile in kW
