@@ -38,7 +38,11 @@ int main() {
 	vector<int> myStandards = { 180, 260, 420 };
 	Ecar *ec1 = new Ecar(myStandards);
 	cout << "Targa auto elettrica ec1: " << ec1->getTarga() << endl;
-	ec1->setTarga("EL-101-LE");
+	try {
+		ec1->setTarga("EL-101-LEEEEEEEEE");
+	} catch(int x) {
+		cout << "Formato targa errato! Cannot update" << endl;
+	}
 	cout << "Targa auto elettrica ec1: " << ec1->getTarga() << endl;
 	ec1->showInfo();
 

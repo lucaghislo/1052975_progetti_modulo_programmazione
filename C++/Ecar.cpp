@@ -44,7 +44,7 @@ void Ecar::printStandards() {
 	for (vector<int>::iterator it = standards.begin(); it != standards.end();
 			++it)
 		cout << ' ' << *it;
-	cout << " \n" << endl;
+	cout << " V\n" << endl;
 }
 
 void Ecar::showInfo() {
