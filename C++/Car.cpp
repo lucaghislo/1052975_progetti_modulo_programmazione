@@ -1,6 +1,8 @@
 /*
  * car.cpp
  *
+ * File di implementazione dei metodi della classe Car
+ *
  *  Created on: 16 ago 2021
  *      Author: Luca Ghislotti
  */
@@ -36,45 +38,14 @@ Car::Car() {
 	// Allocazione area di memoria su heap per salvataggio numero di telaio
 	numTelaio = (char*) malloc(sizeof(char) * 10);
 	strcpy(numTelaio, buildVIN(prefix)); // VIN generico pre-costruzione
-	cout << "car with " << targa << " has VIN " << numTelaio << endl;
+	cout << "car with " << targa << " number plate has VIN " << numTelaio
+			<< endl;
 
 	potenza = minPotenza; // auto pre-immatricolata ha potenza di default
-	cout << "car with " << targa << " and VIN " << numTelaio
+	cout << "car with " << targa << " number plate and VIN " << numTelaio
 			<< " has default power of " << potenza << " kW" << endl << endl;
 
 	peso = 1000;
-
-	/*
-	 * Incremento del prefisso dopo la creazione dell'auto
-	 */
-	Car::increasePrefix();
-}
-
-/*
- * Costruttore della classe con parametro targa
- */
-Car::Car(char *targaInput) {
-	// Allocazione area di memoria su heap per salvataggio targa
-	targa = (char*) malloc(sizeof(char) * 9);
-	strcpy(targa, targaInput); // targa definita da parametro
-	cout << "built car with " << targa << " number plate" << endl;
-
-	try {
-		Car::buildVIN(prefix);
-	} catch (int x) {
-		cout << "Errore creazione auto: threshold superata" << endl;
-	}
-
-	// Allocazione area di memoria su heap per salvataggio numero di telaio
-	numTelaio = (char*) malloc(sizeof(char) * 10);
-	strcpy(numTelaio, buildVIN(prefix)); // VIN generico pre-costruzione
-	cout << "car with " << targa << " has VIN " << numTelaio << endl;
-
-	potenza = minPotenza; // auto pre-immatricolata ha potenza di default
-	cout << "car with " << targa << " and VIN " << numTelaio
-			<< " has default power of " << potenza << " kW" << endl << endl;
-
-	peso = 1000; // peso posto di default a 1000 Kg
 
 	/*
 	 * Incremento del prefisso dopo la creazione dell'auto
@@ -102,7 +73,8 @@ Car::Car(char *targaInput, int pesoInput, int potenzaInput) :
 	// Allocazione area di memoria su heap per salvataggio numero di telaio
 	numTelaio = (char*) malloc(sizeof(char) * 10);
 	strcpy(numTelaio, buildVIN(prefix)); // VIN generico pre-costruzione
-	cout << "car with " << targa << " has VIN " << numTelaio << endl << endl;
+	cout << "car with " << targa << " number plate has VIN " << numTelaio
+			<< endl << endl;
 
 	/*
 	 * Incremento del prefisso dopo la creazione dell'auto
@@ -126,16 +98,16 @@ void Car::increasePrefix() {
 
 char* Car::buildVIN(int prefix) {
 	string str_prefix = to_string(prefix);
-	int lenght = str_prefix.length();
+	int length = str_prefix.length();
 	char *VIN = (char*) malloc(sizeof(char) * 10);
 	strcpy(VIN, str_prefix.data());
 
-	if (lenght > 10) {
+	if (length > 10) {
 		delete VIN;
 		throw 403; // error code nel caso venga superato il limite di immatricolazioni
 	} else {
 		// costruzione VIN generico con prefisso
-		for (int i = 0; i < 10 - lenght; i++) {
+		for (int i = 0; i < 10 - length; i++) {
 			strcat(VIN, "X");
 		}
 	}
@@ -147,18 +119,32 @@ char* Car::getTarga() {
 	return Car::targa;
 }
 
-void Car::setTarga(char *newTarga) {
-	strcpy(Car::targa, newTarga);
+char* Car::getVIN() {
+	return Car::numTelaio;
+}
+
+short Car::getPotenza() {
+	return Car::potenza;
+}
+
+short Car::getPeso() {
+	return Car::peso;
+}
+
+void Car::setTarga(string newTarga) {
+	if(newTarga.length() > 9)
+		throw 403;
+	else
+		strcpy(targa, newTarga.data());
 }
 
 /*
  * Metodo distruttore della classe Car
  *
- * Car::~Car() {
- delete targa; // deallocazione della targa da heap
- delete numTelaio; // deallocazione del numero di telaio da heap
- }
- *
- *
  */
+Car::~Car() {
+	delete targa; // deallocazione della targa da heap
+	delete numTelaio; // deallocazione del numero di telaio da heap
+	cout << "cleared all cars" << endl;
+}
 
