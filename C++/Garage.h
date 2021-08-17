@@ -51,6 +51,14 @@ public:
 	 */
 	void stampaFlotta();
 
+	/*
+	 * Esempio di funzione inline che restituisce il numero di auto
+	 * nella flotta
+	 */
+	inline short countAuto() {
+		return flotta.size();
+	}
+
 private:
 	vector<unique_ptr<Car>> flotta;
 

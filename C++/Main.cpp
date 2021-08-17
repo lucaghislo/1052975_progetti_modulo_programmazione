@@ -30,17 +30,17 @@ int main() {
 	/*
 	 * All'utente viene richiesto ad inoltranza di inserire auto:
 	 * alla creazione, vengono inserite in un vector di cui viene restuito
-	 * lo smart pointer all'istanza di Car (una delle sue classi derivate),
-	 * stampato il risultato della funzione isElectric() e le informazioni
-	 * associate all'auto creata con la funzione showInfo()
+	 * lo smart pointer all'istanza di Car (una delle sue classi derivate) e
+	 * vengono stampate le informazioni associate all'intera flotta tramite
+	 * la funzione stampaFlott() che sfrutta showInfo() specializzata
+	 * per ciascun tipo di auto
 	 */
 	while (true) {
 		try {
 			g.newAuto();
 			g.stampaFlotta();
-
 		} catch (int x) {
-			cout << "Errore selezione tipo auto";
+			cout << "Errore selezione tipo auto" << endl;
 		}
 	}
 }

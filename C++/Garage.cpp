@@ -28,7 +28,7 @@ void Garage::newAuto() {
 	char *targa_ptr = (char*) malloc(sizeof(char) * targa.length());
 	int peso, potenza;
 
-	cout << "Targa: ";
+	cout << "\nTarga: ";
 	cin >> targa;
 	cout << "Peso: ";
 	cin >> peso;
@@ -56,10 +56,15 @@ void Garage::newAuto() {
 		cout << "Consumo extra-urbano: ";
 		cin >> extra;
 
+		/*
+		 * Utilizzo dello smart pointer unique_ptr che, essendo univoco,
+		 * deve essere esplicitamente spostato nel containter STL
+		 * vector (ne esiste una sola copia)
+		 */
 		unique_ptr<Car> veicoloFF(
 				new FFcar(targa_ptr, peso, potenza, fuelCap, urbano, combi,
 						extra));
-		flotta.push_back(move(veicoloFF));
+		flotta.push_back(move(veicoloFF)); // push dello smart pointer nel vector
 		cout << "Creata auto tradizionale" << endl << endl;
 		break;
 	}

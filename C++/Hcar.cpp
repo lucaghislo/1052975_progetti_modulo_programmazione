@@ -35,7 +35,7 @@ void Hcar::showInfo() {
 void Hcar::printResumee() {
 	cout << "Cap. Ser.:  " << getCapSerb() << " L" << endl;
 	cout << "Bat. cap.:  " << getCapBat() << " kWh" << endl;
-	cout << " Cap. Co.:  " << capacitaCombinata << " km" << endl << endl;
+	cout << " Cap. Co.:  " << capacitaCombinata << " km" << endl;
 }
 
 string Hcar::getClassName() {

@@ -57,4 +57,5 @@ void Ecar::showInfo() {
 	Car::showInfo();
 	cout << "Batt. cap:  " << getCapBat() << " kWh" << endl;
 	printResumee();
+	cout << "";
 }
