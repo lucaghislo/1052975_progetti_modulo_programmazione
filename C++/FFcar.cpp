@@ -27,6 +27,8 @@ void FFcar::printResumee() {
 	for (map<string, double>::iterator it = consumi.begin();
 			it != consumi.end(); ++it)
 		cout << it->first << ":  " << it->second << " L/100km\n";
+
+	cout << endl;
 }
 
 void FFcar::showInfo() {

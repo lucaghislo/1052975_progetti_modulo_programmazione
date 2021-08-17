@@ -60,7 +60,7 @@ void Garage::newAuto() {
 				new FFcar(targa_ptr, peso, potenza, fuelCap, urbano, combi,
 						extra));
 		flotta.push_back(move(veicoloFF));
-		cout << "Creata auto tradizionale" << endl;
+		cout << "Creata auto tradizionale" << endl << endl;
 		break;
 	}
 
@@ -68,7 +68,7 @@ void Garage::newAuto() {
 	case 1: {
 		unique_ptr<Car> veicoloE(new Ecar(targa_ptr, peso, potenza));
 		flotta.push_back(move(veicoloE));
-		cout << "Creata auto elettrica" << endl;
+		cout << "Creata auto elettrica" << endl << endl;
 		break;
 	}
 
@@ -99,7 +99,7 @@ void Garage::newAuto() {
 				new Hcar(targa_ptr, peso, potenza, fuelCap, urbano, combi,
 						extra, standards));
 		flotta.push_back(move(veicoloH));
-		cout << "Creata auto ibrida" << endl;
+		cout << "Creata auto ibrida" << endl << endl;
 		break;
 	}
 
@@ -124,7 +124,7 @@ void Garage::stampaInfoAuto(Car *c) {
 }
 
 void Garage::stampaFlotta() {
-	cout << "AUTO NELLA FLOTTA:" << endl;
+	cout << "***AUTO NELLA FLOTTA***" << endl;
 	for (auto const &i : flotta) {
 		i.get()->showInfo();
 	}

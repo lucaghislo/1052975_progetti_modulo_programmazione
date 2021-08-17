@@ -22,8 +22,6 @@ Ecar::Ecar(char *targaInput, int pesoInput, int potenzaInput) :
 	standards.push_back(110);
 	standards.push_back(230);
 	standards.push_back(380);
-
-	printResumee();
 }
 
 void Ecar::setBatCap(short batCap) {
@@ -51,7 +49,7 @@ void Ecar::printResumee() {
 	for (vector<int>::iterator it = standards.begin(); it != standards.end();
 			++it)
 		cout << ' ' << *it;
-	cout << " V\n" << endl;
+	cout << " V" << endl;
 }
 
 void Ecar::showInfo() {
