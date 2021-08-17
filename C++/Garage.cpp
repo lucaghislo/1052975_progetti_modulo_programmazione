@@ -11,14 +11,12 @@
 #include <iostream>
 using namespace std;
 #include <cstring>
-#include <string>
 #include <memory>
 #include "Garage.h"
 #include "Car.h"
 #include "FFcar.h"
 #include "Hcar.h"
 #include "Ecar.h"
-#include <typeinfo>
 
 Garage::Garage() {
 }
@@ -28,7 +26,7 @@ void Garage::newAuto() {
 	char *targa_ptr = (char*) malloc(sizeof(char) * targa.length());
 	int peso, potenza;
 
-	cout << "\nTarga: ";
+	cout << "Targa: ";
 	cin >> targa;
 	cout << "Peso: ";
 	cin >> peso;

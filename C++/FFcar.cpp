@@ -6,9 +6,9 @@
  */
 
 #include <iostream>
-#include "FFcar.h"
-#include <string>
 using namespace std;
+#include <string>
+#include "FFcar.h"
 
 FFcar::FFcar(char *targaInput, int pesoInput, int potenzaInput,
 		short fuelCapacity, double urbano, double combinato, double extra) :

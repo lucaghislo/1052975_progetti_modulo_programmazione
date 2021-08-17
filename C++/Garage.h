@@ -9,10 +9,10 @@
 
 #ifndef GARAGE_H_
 #define GARAGE_H_
-#include "Car.h"
 #include <vector>
 #include <memory>
-#include <string>
+#include <string>_
+#include "Car.h"
 
 /*
  * Implemento la classe Garage sfruttando il design pattern

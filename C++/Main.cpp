@@ -9,11 +9,10 @@
  */
 
 #include <iostream>
-#include "Garage.h"
+using namespace std;
 #include <cstring>
 #include <vector>
-using namespace std;
-
+#include "Garage.h"
 #include "Car.h"
 #include "Ecar.h"
 #include "FFcar.h"

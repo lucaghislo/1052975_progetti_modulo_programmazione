@@ -12,7 +12,6 @@
 #ifndef TAXCALC_H_
 #define TAXCALC_H_
 
-#include <iostream>
 using namespace std;
 
 /*

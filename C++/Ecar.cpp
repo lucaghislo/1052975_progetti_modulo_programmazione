@@ -6,8 +6,8 @@
  */
 
 #include <iostream>
-#include <vector>
 using namespace std;
+#include <vector>
 #include "Ecar.h"
 
 Ecar::Ecar(vector<int> standardsInput) :
