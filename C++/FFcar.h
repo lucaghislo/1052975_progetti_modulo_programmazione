@@ -1,11 +1,10 @@
 /*
  * FFcar.h
+ * Author: Luca Ghislotti
  *
  * Classe derivata da Car che rappresenta l'auto a combustibile
  * fossile (FF: Fossile Fuel)
  *
- *  Created on: 16 ago 2021
- *      Author: Luca Ghislotti
  */
 
 #ifndef FFCAR_H_
@@ -46,9 +45,6 @@ private:
 	 * STL map per memorizzare i consumi medi in varie modalità di guida
 	 */
 	map<string, double> consumi;
-
-protected:
-
 };
 
 #endif /* FFCAR_H_ */

@@ -1,11 +1,10 @@
 /*
  * Garage.cpp
+ * Author: Luca Ghislotti
  *
  * Implementazione della class Garage: sfrutto il concetto di
  * Smart Pointers nella forma unique_ptr<>
  *
- *  Created on: 16 ago 2021
- *      Author: Luca Ghislotti
  */
 
 #include <iostream>

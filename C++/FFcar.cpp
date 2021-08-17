@@ -1,8 +1,9 @@
 /*
  * FFcar.cpp
+ * Author: Luca Ghislotti
  *
- *  Created on: 16 ago 2021
- *      Author: Luca Ghislotti
+ * Implementazione della classe FFcar
+ *
  */
 
 #include <iostream>

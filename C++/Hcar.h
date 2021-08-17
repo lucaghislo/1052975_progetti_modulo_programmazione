@@ -1,13 +1,12 @@
 /*
  * Hcar.h
+ * Author: Luca Ghislotti
  *
  * Auto ibrida (H: Hybrid) è sia un'auto FFcar (Fossile Fuel) che
  * un'auto Ecar (E: electric). Questa classe dimostra i concetti
  * di ereditarietà multipla ed i problemi che ne derivano, come
  * il name clashing
  *
- *  Created on: 16 ago 2021
- *      Author: Luca Ghislotti
  */
 
 #ifndef HCAR_H_
@@ -30,10 +29,9 @@ public:
 	/*
 	 * Prefisso virtual permette di implementare polimorfismo run-time
 	 */
-	virtual void showInfo();
-	virtual void printResumee();
-
-	virtual string getClassName();
+	virtual void showInfo(); // visualizzazione informazioni auto
+	virtual void printResumee(); // visualizzazioni informazioni auto ibrida
+	virtual string getClassName(); // ottenimento nome della classe derivata
 
 	/*
 	 * Distruttore virtual della classe derivata permette invocazione del
@@ -43,9 +41,6 @@ public:
 
 private:
 	unsigned short capacitaCombinata; // autonomia auto ibrida
-
-protected:
-
 };
 
 #endif /* HCAR_H_ */

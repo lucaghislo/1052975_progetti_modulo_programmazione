@@ -1,12 +1,11 @@
 /*
- * car.h
+ * Car.h
+ * Author: Luca Ghislotti
  *
  * Header della classe automobile utilizzata come
  * template per la creazione delle automobili elettriche, ibride e
  * tradizionali nella forma di classi derivate
  *
- *  Created on: 16 ago 2021
- *      Author: Luca Ghislotti
  */
 
 #ifndef CAR_HPP_

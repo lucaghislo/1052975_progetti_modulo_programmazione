@@ -1,17 +1,15 @@
 /*
  * Garage.h
+ * Author: Luca Ghislotti
  *
  * Classe Garage permette di utilizzare le auto e gestirle
  *
- *  Created on: 16 ago 2021
- *      Author: Luca Ghislotti
  */
 
 #ifndef GARAGE_H_
 #define GARAGE_H_
 #include <vector>
 #include <memory>
-#include <string>_
 #include "Car.h"
 
 /*
@@ -60,13 +58,17 @@ public:
 	}
 
 private:
-	vector<unique_ptr<Car>> flotta;
-
 	// Costruttore vuoto della classe Garage
 	Garage();
 
 	// Copy constructor della classe Garage
 	Garage(Garage const&);
+
+	/*
+	 * STL vector di unique_ptr ognuno dei quali punta alle auto
+	 * presenti nella flotta
+	 */
+	vector<unique_ptr<Car>> flotta;
 };
 
 #endif /* GARAGE_H_ */

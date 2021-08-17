@@ -1,10 +1,9 @@
 /*
  * Hcar.cpp
+ * Author: Luca Ghislotti
  *
  * Implementazione della classe Hcar
  *
- *  Created on: 16 ago 2021
- *      Author: Luca Ghislotti
  */
 
 #include <iostream>

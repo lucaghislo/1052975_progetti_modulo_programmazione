@@ -1,10 +1,9 @@
 /*
- * car.cpp
+ * Car.cpp
+ * Author: Luca Ghislotti
  *
  * File di implementazione dei metodi della classe Car
  *
- *  Created on: 16 ago 2021
- *      Author: Luca Ghislotti
  */
 
 #include <iostream>

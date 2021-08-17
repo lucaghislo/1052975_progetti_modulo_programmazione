@@ -1,11 +1,10 @@
 /*
  * Ecar.h
+ * Author: Luca Ghislotti
  *
  * Classe derivata da Car che rappresenta l'auto elettrica
  * (E: Electric)
  *
- *  Created on: 16 ago 2021
- *      Author: Luca Ghislotti
  */
 
 #ifndef ECAR_H_
@@ -45,9 +44,6 @@ public:
 private:
 	short capacitaBatteria; // parametro specifico per le auto elettriche (kWh)
 	vector<int> standards; // elenco degli standard di tensione per la ricarica (V)
-
-protected:
-
 };
 
 #endif /* ECAR_H_ */

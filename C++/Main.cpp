@@ -1,11 +1,10 @@
 /*
- * main.cpp
+ * Main.cpp
+ * Author: Luca Ghislotti
  *
  * Classe main del progetto, in cui ne viene testato
  * il funzionamento
  *
- *  Created on: 16 ago 2021
- *      Author: Luca Ghislotti
  */
 
 #include <iostream>
