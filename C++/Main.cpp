@@ -1,6 +1,9 @@
 /*
  * main.cpp
  *
+ * Classe main del progetto, in cui ne viene testato
+ * il funzionamento
+ *
  *  Created on: 16 ago 2021
  *      Author: Luca Ghislotti
  */
@@ -14,6 +17,7 @@ using namespace std;
 #include "Car.h"
 #include "Ecar.h"
 #include "FFcar.h"
+#include "Hcar.h"
 #include "TaxCalc.h"
 
 int main() {
@@ -55,9 +59,25 @@ int main() {
 	} catch (int x) {
 		cout << "Formato targa errato! Cannot update" << endl;
 	}
-	cout << "Targa auto elettrica ffc1: " << ec1->getTarga() << endl;
+	cout << "Targa auto tradizionale ffc1: " << ffc1->getTarga() << endl;
 	ffc1->showInfo();
 
-	TaxCalc<double> tc(5.3);
+	TaxCalc<float> tc(5.1);
 	cout << tc.calcoloBollo(ffc1) << endl;
+
+	//-------------------------------------------------------------------
+
+	Hcar *hc1 = new Hcar("ZA-044-ZB", 1200, 149, 50, 4.5, 5.5, 8.9, myStandards);
+
+	hc1->showInfo();
+
+		cout << "\n\nTarga auto ibrida hc1: " << hc1->getTarga() << endl;
+		try {
+			hc1->setTarga("EL-101-LE");
+		} catch (int x) {
+			cout << "Formato targa errato! Cannot update" << endl;
+		}
+		cout << "Targa auto ibrida hc1: " << hc1->getTarga() << endl;
+
+		hc1->showInfo();
 }

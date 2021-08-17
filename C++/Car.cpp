@@ -27,7 +27,6 @@ Car::Car() {
 	// Allocazione area di memoria su heap per salvataggio targa
 	targa = (char*) malloc(sizeof(char) * 9);
 	strcpy(targa, "XX-XXX-XX"); // targa generica pre-immatricolazione
-	cout << "built anonymous car with " << targa << " number plate" << endl;
 
 	try {
 		Car::buildVIN(prefix);
@@ -38,12 +37,8 @@ Car::Car() {
 	// Allocazione area di memoria su heap per salvataggio numero di telaio
 	numTelaio = (char*) malloc(sizeof(char) * 10);
 	strcpy(numTelaio, buildVIN(prefix)); // VIN generico pre-costruzione
-	cout << "car with " << targa << " number plate has VIN " << numTelaio
-			<< endl;
 
 	potenza = minPotenza; // auto pre-immatricolata ha potenza di default
-	cout << "car with " << targa << " number plate and VIN " << numTelaio
-			<< " has default power of " << potenza << " kW" << endl << endl;
 
 	peso = 1000;
 
@@ -62,7 +57,6 @@ Car::Car(char *targaInput, int pesoInput, int potenzaInput) :
 	// Allocazione area di memoria su heap per salvataggio targa
 	targa = (char*) malloc(sizeof(char) * 9);
 	strcpy(targa, targaInput); // targa definita da parametro
-	cout << "built car with " << targa << " number plate" << endl;
 
 	try {
 		Car::buildVIN(prefix);
@@ -73,8 +67,6 @@ Car::Car(char *targaInput, int pesoInput, int potenzaInput) :
 	// Allocazione area di memoria su heap per salvataggio numero di telaio
 	numTelaio = (char*) malloc(sizeof(char) * 10);
 	strcpy(numTelaio, buildVIN(prefix)); // VIN generico pre-costruzione
-	cout << "car with " << targa << " number plate has VIN " << numTelaio
-			<< endl << endl;
 
 	/*
 	 * Incremento del prefisso dopo la creazione dell'auto
@@ -132,10 +124,18 @@ short Car::getPeso() {
 }
 
 void Car::setTarga(string newTarga) {
-	if(newTarga.length() > 9)
+	if (newTarga.length() > 9)
 		throw 403;
 	else
 		strcpy(targa, newTarga.data());
+}
+
+void Car::showInfo() {
+	cout << "CAR DATA SUMMARY" << endl;
+	cout << "    Targa:  " << getTarga() << endl;
+	cout << "      VIN:  " << getVIN() << endl;
+	cout << "  Potenza:  " << getPotenza() << " kW" << endl;
+	cout << "     Peso:  " << getPeso() << " kg" << endl;
 }
 
 /*

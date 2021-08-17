@@ -50,7 +50,14 @@ public:
 	 * Classe TaxCalc definita amica allo scopo di accedere al campo privato
 	 * potenza ed effettuare calcolo bollo auto
 	 */
-	template<typename> friend class TaxCalc;
+	template<typename T> friend class TaxCalc;
+
+	/*
+	 * Classe auto è una classe astratta: non può essere istanziata,
+	 * se non sotto forma delle sue classi derivate FFcar, Ecar e Hcar
+	 * (motivazione notazione "= 0")
+	 */
+	virtual void showInfo() = 0;
 
 private:
 	/*
@@ -78,13 +85,6 @@ protected:
 	 * nuova auto
 	 */
 	static void increasePrefix();
-
-	/*
-	 * Classe auto è una classe astratta: non può essere istanziata,
-	 * se non sotto forma delle sue classi derivate FFcar, Ecar e Hcar
-	 * (motivazione notazione "= 0")
-	 */
-	virtual void showInfo() = 0;
 
 	/*
 	 * Distruttore virtuale della classe Car, essendo quest'ultima una classe astratta

@@ -13,18 +13,21 @@ using namespace std;
 Ecar::Ecar(vector<int> standardsInput) :
 		Car() {
 	capacitaBatteria = 0;
-
 	standards = standardsInput;
 }
 
 Ecar::Ecar(char *targaInput, int pesoInput, int potenzaInput) :
-		Car(targaInput, pesoInput, potenzaInput), capacitaBatteria(0) {
+		Car(targaInput, pesoInput, potenzaInput), capacitaBatteria(400) {
 
 	standards.push_back(110);
 	standards.push_back(230);
 	standards.push_back(380);
 
 	printResumee();
+}
+
+void Ecar::setBatCap(short batCap) {
+	capacitaBatteria = batCap;
 }
 
 Ecar::~Ecar() {
@@ -48,11 +51,8 @@ void Ecar::printResumee() {
 }
 
 void Ecar::showInfo() {
-	cout << "\nELECTRIC CAR DATA SUMMARY" << endl;
-	cout << "    Targa:  " << getTarga() << endl;
-	cout << "      VIN:  " << getVIN() << endl;
-	cout << "  Potenza:  " << getPotenza() << " kW" << endl;
-	cout << "     Peso:  " << getPeso() << " kg" << endl;
+	cout << "\nELECTRIC ";
+	Car::showInfo();
 	cout << "Batt. cap:  " << getCapBat() << " kWh" << endl;
 	printResumee();
 }

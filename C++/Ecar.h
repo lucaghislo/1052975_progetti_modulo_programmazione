@@ -31,6 +31,7 @@ public:
 	virtual void showInfo();
 	virtual void printResumee();
 	short getCapBat(); // ottenimento capacità batteria
+	void setBatCap(short batCap); // metodo per definizione capacità batteria
 
 private:
 	short capacitaBatteria; // parametro specifico per le auto elettriche (kWh)
