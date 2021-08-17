@@ -38,6 +38,10 @@ void Hcar::printResumee() {
 	cout << " Cap. Co.:  " << capacitaCombinata << " km" << endl;
 }
 
+string Hcar::getClassName() {
+	return "H";
+}
+
 Hcar::~Hcar() {
 	cout << "cleared all Hcars" << endl;
 }

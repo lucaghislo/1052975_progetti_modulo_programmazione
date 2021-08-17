@@ -36,6 +36,10 @@ void FFcar::showInfo() {
 	printResumee();
 }
 
+string FFcar::getClassName() {
+	return "F";
+}
+
 FFcar::~FFcar() {
 	consumi.clear();
 	cout << "cleared all FFcars" << endl;

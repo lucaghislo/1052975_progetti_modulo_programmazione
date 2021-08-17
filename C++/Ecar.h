@@ -33,6 +33,8 @@ public:
 	short getCapBat(); // ottenimento capacità batteria
 	void setBatCap(short batCap); // metodo per definizione capacità batteria
 
+	virtual string getClassName();
+
 	/*
 	 * Distruttore virtual della classe derivata permette invocazione del
 	 * distruttore della classe base

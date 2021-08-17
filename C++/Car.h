@@ -59,6 +59,8 @@ public:
 	 */
 	virtual void showInfo() = 0;
 
+	virtual string getClassName() = 0;
+
 	/*
 	 * Distruttore virtuale della classe Car, essendo quest'ultima una classe astratta
 	 */

@@ -27,7 +27,29 @@ public:
 		return instance;
 	}
 
-	unique_ptr<Car> newAuto(int carType);
+	/*
+	 * Utilizzo dei puntatori smart: creo funzione che restituisce
+	 * smart pointer ad auto creata ed inserita in un STL vector
+	 * di smart pointers
+	 */
+	void newAuto();
+
+	/*
+	 * Funzione che, dato in input un raw pointer, restiuisce un bool
+	 * che rappresenta il fatto che l'auto passata come parametro sia
+	 * elettrica (quindi ibrida o elettrica) oppure no
+	 */
+	bool isElectric(Car *c);
+
+	/*
+	 * Funzione per il print delle informazioni di un'auto
+	 */
+	void stampaInfoAuto(Car *c);
+
+	/*
+	 * Funzione per il print dell'intero STL vector flotta del garage
+	 */
+	void stampaFlotta();
 
 private:
 	vector<unique_ptr<Car>> flotta;

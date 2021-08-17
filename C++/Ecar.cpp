@@ -30,6 +30,10 @@ void Ecar::setBatCap(short batCap) {
 	capacitaBatteria = batCap;
 }
 
+string Ecar::getClassName() {
+	return "E";
+}
+
 Ecar::~Ecar() {
 	standards.clear();
 	cout << "cleared all Ecars" << endl;
