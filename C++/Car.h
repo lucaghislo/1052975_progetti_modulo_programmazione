@@ -59,6 +59,11 @@ public:
 	 */
 	virtual void showInfo() = 0;
 
+	/*
+	 * Distruttore virtuale della classe Car, essendo quest'ultima una classe astratta
+	 */
+	virtual ~Car();
+
 private:
 	/*
 	 * Metodo statico che incrementa il prefisso del numero di telaio nella forma di
@@ -85,11 +90,6 @@ protected:
 	 * nuova auto
 	 */
 	static void increasePrefix();
-
-	/*
-	 * Distruttore virtuale della classe Car, essendo quest'ultima una classe astratta
-	 */
-	virtual ~Car();
 };
 
 #endif /* CAR_H_ */

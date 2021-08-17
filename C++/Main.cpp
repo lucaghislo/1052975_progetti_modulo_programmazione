@@ -67,17 +67,18 @@ int main() {
 
 	//-------------------------------------------------------------------
 
-	Hcar *hc1 = new Hcar("ZA-044-ZB", 1200, 149, 50, 4.5, 5.5, 8.9, myStandards);
+	Hcar *hc1 = new Hcar("ZA-044-ZB", 1200, 149, 50, 4.5, 5.5, 8.9,
+			myStandards);
 
 	hc1->showInfo();
 
-		cout << "\n\nTarga auto ibrida hc1: " << hc1->getTarga() << endl;
-		try {
-			hc1->setTarga("EL-101-LE");
-		} catch (int x) {
-			cout << "Formato targa errato! Cannot update" << endl;
-		}
-		cout << "Targa auto ibrida hc1: " << hc1->getTarga() << endl;
+	cout << "\n\nTarga auto ibrida hc1: " << hc1->getTarga() << endl;
+	try {
+		hc1->setTarga("EL-101-LE");
+	} catch (int x) {
+		cout << "Formato targa errato! Cannot update" << endl;
+	}
+	cout << "Targa auto ibrida hc1: " << hc1->getTarga() << endl;
 
-		hc1->showInfo();
+	hc1->showInfo();
 }

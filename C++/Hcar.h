@@ -32,15 +32,17 @@ public:
 	virtual void showInfo();
 	virtual void printResumee();
 
-private:
-	unsigned short capacitaCombinata; // autonomia auto ibrida
-
-protected:
 	/*
 	 * Distruttore virtual della classe derivata permette invocazione del
 	 * distruttore della classe base
 	 */
 	virtual ~Hcar();
+
+private:
+	unsigned short capacitaCombinata; // autonomia auto ibrida
+
+protected:
+
 };
 
 #endif /* HCAR_H_ */

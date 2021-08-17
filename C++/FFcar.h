@@ -30,6 +30,12 @@ public:
 	virtual void printResumee();
 	short getCapSerb(); // ottenimento capacità serbatoio combustibile
 
+	/*
+	 * Distruttore virtual della classe derivata permette invocazione del
+	 * distruttore della classe base
+	 */
+	virtual ~FFcar();
+
 private:
 	short capacitaSerbatoio; // capacità serbatoio auto tradizionale
 
@@ -39,11 +45,7 @@ private:
 	map<string, double> consumi;
 
 protected:
-	/*
-	 * Distruttore virtual della classe derivata permette invocazione del
-	 * distruttore della classe base
-	 */
-	virtual ~FFcar();
+
 };
 
 #endif /* FFCAR_H_ */

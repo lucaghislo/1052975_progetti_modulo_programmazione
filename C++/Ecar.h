@@ -33,16 +33,18 @@ public:
 	short getCapBat(); // ottenimento capacità batteria
 	void setBatCap(short batCap); // metodo per definizione capacità batteria
 
-private:
-	short capacitaBatteria; // parametro specifico per le auto elettriche (kWh)
-	vector<int> standards; // elenco degli standard di tensione per la ricarica (V)
-
-protected:
 	/*
 	 * Distruttore virtual della classe derivata permette invocazione del
 	 * distruttore della classe base
 	 */
 	virtual ~Ecar();
+
+private:
+	short capacitaBatteria; // parametro specifico per le auto elettriche (kWh)
+	vector<int> standards; // elenco degli standard di tensione per la ricarica (V)
+
+protected:
+
 };
 
 #endif /* ECAR_H_ */

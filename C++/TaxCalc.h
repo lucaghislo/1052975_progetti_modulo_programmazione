@@ -15,8 +15,6 @@
 #include <iostream>
 using namespace std;
 
-//TODO documentazione classe amica template con template funzione
-
 /*
  * Classe TaxCalc definita come template in funzione del parametro
  * generico T: è possibile descrivere il bollo auto sotto forma di
