@@ -12,5 +12,5 @@ Il progetto SCALA ha lo scopo di implementare le medesime funzionalità del prog
 Il progetto ASMETA ha lo scopo di effettuare l'implementazione di un semaforo sottoforma di automa a stati.
 
 ## Documentazione
-La documentazione è disponibile al seguente link Google Drive<br>
+La documentazione è disponibile al seguente link Google Drive:<br>
 [https://drive.google.com/file/d/1_wPotnfQX7saXyX4umg2k4tRnzB-QBjl/view?usp=sharing](https://drive.google.com/file/d/1_wPotnfQX7saXyX4umg2k4tRnzB-QBjl/view?usp=sharing)
