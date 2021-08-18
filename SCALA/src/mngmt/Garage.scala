@@ -1,0 +1,5 @@
+package mngmt
+
+class Garage {
+  
+}

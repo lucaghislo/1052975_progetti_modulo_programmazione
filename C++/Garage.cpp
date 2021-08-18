@@ -121,8 +121,8 @@ bool Garage::isElectric(Car *c) {
 		return false;
 }
 
-void Garage::stampaInfoAuto(Car *c) {
-	c->showInfo();
+void Garage::stampaInfoAuto(Car &c) const {
+	c.showInfo();
 }
 
 void Garage::stampaFlotta() {

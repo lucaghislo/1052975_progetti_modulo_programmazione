@@ -57,7 +57,7 @@ public:
 	 * se non sotto forma delle sue classi derivate FFcar, Ecar e Hcar
 	 * (motivazione notazione "= 0")
 	 */
-	virtual void showInfo() = 0;
+	virtual void showInfo();
 
 	virtual string getClassName() = 0;
 

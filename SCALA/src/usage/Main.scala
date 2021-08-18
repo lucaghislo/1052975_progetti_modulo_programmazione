@@ -1,0 +1,5 @@
+package usage
+
+class Main {
+  
+}

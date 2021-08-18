@@ -42,7 +42,7 @@ public:
 	/*
 	 * Funzione per il print delle informazioni di un'auto
 	 */
-	void stampaInfoAuto(Car *c);
+	void stampaInfoAuto(Car &c) const;
 
 	/*
 	 * Funzione per il print dell'intero STL vector flotta del garage

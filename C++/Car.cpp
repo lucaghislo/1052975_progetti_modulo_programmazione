@@ -77,8 +77,8 @@ Car::Car(char *targaInput, int pesoInput, int potenzaInput) :
  * Implementazione del copy-constructor
  */
 Car::Car(const Car &newCar) {
-	strcpy(Car::targa, newCar.targa);
-	strcpy(Car::numTelaio, newCar.numTelaio);
+	strcpy(targa, newCar.targa);
+	strcpy(numTelaio, newCar.numTelaio);
 	Car::potenza = newCar.potenza;
 	Car::peso = newCar.peso;
 }
