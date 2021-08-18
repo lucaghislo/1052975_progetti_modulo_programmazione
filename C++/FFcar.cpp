@@ -31,7 +31,7 @@ void FFcar::printResumee() {
 }
 
 void FFcar::showInfo() {
-	cout << "\nFOSSILE FUEL CAR ";
+	cout << "\nFOSSILE FUEL ";
 	Car::showInfo();
 	cout << "Cap. Ser.:  " << getCapSerb() << " L" << endl;
 	printResumee();
