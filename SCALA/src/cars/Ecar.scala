@@ -10,6 +10,6 @@
 
 package cars
 
-class Ecar extends Car {
-
+class Ecar(targa: String, potenza: Int, peso: Int) extends AbstractCar with VINbuilder {
+  setNumTelaio(buildVIN(getPrefix))
 }

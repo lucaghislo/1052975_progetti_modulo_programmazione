@@ -10,6 +10,6 @@
 
 package cars
 
-class FFcar extends Car {
+class FFcar {
   
 }
