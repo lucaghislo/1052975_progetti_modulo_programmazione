@@ -12,23 +12,30 @@
 package cars
 
 /*
- * Un trait, al contrario di un'interfaccia Java, permette l'implementazione
- * di metodi, garantendo una maggiore flessibilità
+ * Definizione del companion object associato alla classe VINbuilder
+ * allo scopo di mantenere prefix come campo statico (assente in Scala)
  */
-trait VINbuilder {
+object VINBuilder {
+  var prefix = 0
+  def increasePrefix = {
+    prefix += 1;
+  }
+}
+
+class VINbuilder {
+  import VINBuilder._
   /*
    * Funzione per la creazione del numero di telaio all'istanziazione
    * della classe, con parametro passato by-name
-   * Da notare la possibilità di implementazione del metodo nel trait
-   * (corrispettivo dell'interfaccia Java)
    */
-  def buildVIN(prefix: => Int): String = {
+  def buildVIN: String = {
     var str_prefix = prefix.toString()
     var length = str_prefix.length()
 
     if (length > 10)
       throw new ArithmeticException("Raggiunto limite immatricolazioni")
 
+    increasePrefix
     str_prefix + "X" * (10 - length)
   }
 }

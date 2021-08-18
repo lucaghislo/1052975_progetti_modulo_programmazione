@@ -10,15 +10,12 @@
 
 package cars
 
-abstract class AbstractCar {
+abstract class AbstractCar(var targa: String, var potenza: Int, var peso: Int) extends VINbuilder {
+  // Numero di telaio definito internamente con valore di default
+  private var numTelaio = "XXXXXXXXX"
+
   // Definizione di Values, immutable
   private val _minPotenza = 30; // potenza minima (costante) per inizializzazione
-
-  // Definizione di Variables, mutable
-  private var numTelaio: String = "XXXXXXXXXX" // numero di telaio dell'automobile
-  private var targa: String = "XX-XXX-XX" // targa dell'automobile
-  private var potenza: Int = 0 // potenza dell'automobile
-  private var peso: Int = 0 // peso dell'automobile
 
   /*
    * Prefisso per inizializzazione del numero di telaio,
@@ -45,12 +42,6 @@ abstract class AbstractCar {
   def setNumTelaio(newTelaio: String) = numTelaio = newTelaio
   def setPotenza(newPotenza: Int) = potenza = newPotenza
   def setPeso(newPeso: Int) = peso = newPeso
-
-  /*
-   * Funzione per incrementare il prefisso del telaio alla
-   * creazione di un'automobile di qualsiasi tipo
-   */
-  def increasePrefix = prefix += 1
 
   /*
    * Metodo, overrided nelle sottoclassi, per la visualizzazione delle
