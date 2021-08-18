@@ -1,5 +1,5 @@
 /*
- * AbstractCar.scala
+ * Car.scala
  * package cars
  * Author: Luca Ghislotti
  *
@@ -10,12 +10,12 @@
 
 package cars
 
-abstract class AbstractCar(var targa: String, var potenza: Int, var peso: Int) extends VINbuilder {
+abstract class Car(var targa: String, var potenza: Int, var peso: Int) extends VINbuilder {
   // Numero di telaio definito internamente con valore di default
-  private var numTelaio = "XXXXXXXXX"
+  private var numTelaio: String = "XXXXXXXXXX"
 
   // Definizione di Values, immutable
-  private val _minPotenza = 30; // potenza minima (costante) per inizializzazione
+  private val minPotenza = 30; // potenza minima (costante) per inizializzazione
 
   /*
    * Prefisso per inizializzazione del numero di telaio,
@@ -29,7 +29,7 @@ abstract class AbstractCar(var targa: String, var potenza: Int, var peso: Int) e
    * molto più snella rispetto a Java
    */
   def getTarga: String = targa
-  def getTelaio: String = numTelaio
+  def getNumTelaio: String = numTelaio
   def getPotenza: Int = potenza
   def getPeso: Int = peso
   def getPrefix: Int = prefix
@@ -50,7 +50,7 @@ abstract class AbstractCar(var targa: String, var potenza: Int, var peso: Int) e
   def showInfo() = {
     println("CAR DATA SUMMARY")
     println("    Targa:  " + getTarga)
-    println("      VIN:  " + getTarga)
+    println("      VIN:  " + getNumTelaio)
     println("  Potenza:  " + getPotenza + " kW")
     println("     Peso:  " + getPeso + " kg")
   }

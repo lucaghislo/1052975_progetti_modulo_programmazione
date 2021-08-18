@@ -3,9 +3,9 @@
  * package cars
  * Author: Luca Ghislotti
  *
- * Interfaccia (Scala trait) che definisce le funzioni
- * della classe Car dalla quale derivano le sottoclassi
- * Ecar, FFcar, Hcar
+ * Classe che permette la creazione del numero di telaio delle
+ * automobili. Per mantenere il prefisso statico, si definisce un
+ * companion object con lo stesso nome della classe compagna
  *
  */
 
@@ -24,6 +24,7 @@ object VINBuilder {
 
 class VINbuilder {
   import VINBuilder._
+
   /*
    * Funzione per la creazione del numero di telaio all'istanziazione
    * della classe, con parametro passato by-name
