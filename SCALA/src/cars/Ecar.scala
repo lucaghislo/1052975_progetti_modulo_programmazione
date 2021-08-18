@@ -52,10 +52,28 @@ class Ecar(targa: String, potenza: Int, peso: Int, var capacitaBatteria: Int = 4
   }
 
   /*
+   * Funzione che permette la visualizzazione degli standard di ricarica,
+   * utilzzata nella funzione showInfo
+   */
+  def printResumee {
+    print("Standards:  ")
+    for (i <- standards)
+      print(i + " ")
+    print("V")
+  }
+
+  /*
    * Metodo per la visualizzazione delle informazioni
    * dell'auto elettrica (Ecar)
+   *
+   * Da notare la clausola "override" che permette di ridefinire
+   * il medesimo metodo della superclasse
    */
-  def showInfo() {
-
+  override def showInfo {
+    print("\nELECTRIC ")
+    super.showInfo()
+    println("Batt. cap:  " + this.getCapBat + " KWh")
+    this.printResumee
+    println("")
   }
 }
