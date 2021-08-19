@@ -52,13 +52,34 @@ class Ecar(targa: String, potenza: Int, peso: Int, var capacitaBatteria: Int = 4
   }
 
   /*
+   * Funzione data in input a showInfo()
+   * Ha come parametro il numero di spazi, posto di default a 1
+   */
+  def getArrayBufferContent(numSpaces: Int = 1): String = {
+    var output: String = "";
+
+    for (i <- standards)
+      output = output + i + " " * numSpaces
+
+    /*
+     * Esempio di come in Scala venga ritornata l'ultima espressione
+     * senza usare la clausola "return"
+     */
+    output + "piero non viene ritornato"
+    output
+  }
+
+  /*
    * Funzione che permette la visualizzazione degli standard di ricarica,
    * utilzzata nella funzione showInfo
+   *
+   *
+   * Esempio di utilizzo di HOF (Higher Order Function)
+   * Viene passata come parametro la funzione di stampa del vettore
    */
-  def printResumee {
+  def printResumee(getArrayBufferContent: Int => String) {
     print("Standards:  ")
-    for (i <- standards)
-      print(i + " ")
+    print(getArrayBufferContent(2))
     print("V")
   }
 
@@ -73,7 +94,7 @@ class Ecar(targa: String, potenza: Int, peso: Int, var capacitaBatteria: Int = 4
     print("\nELECTRIC ")
     super.showInfo()
     println("Batt. cap:  " + this.getCapBat + " KWh")
-    this.printResumee
+    this.printResumee(getArrayBufferContent)
     println("")
   }
 }

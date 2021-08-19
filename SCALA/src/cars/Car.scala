@@ -10,7 +10,21 @@
 
 package cars
 
-abstract class Car(var targa: String, var potenza: Int, var peso: Int) extends VINbuilder {
+/*
+ * Classe astratta con campi privati che estende la
+ * classe VINbuilder contenente i metodi per la creazione del
+ * numero di telaio (uso del campo statico prefix)
+ */
+abstract class Car(private var targa: String, private var potenza: Int, private var peso: Int) extends VINbuilder {
+
+  /*
+   * Expression oriented programming
+   *
+   * Check di integrità della targa: se eccede il numero di caratteri,
+   * viene sollevata un'eccezione intercettata al momento della costruzione
+   */
+  targa = if (targa.length() <= 9) targa else throw new Exception("Errore")
+
   // Numero di telaio definito internamente con valore di default
   private var numTelaio: String = "XXXXXXXXXX"
 
@@ -28,8 +42,8 @@ abstract class Car(var targa: String, var potenza: Int, var peso: Int) extends V
    * Metodi getter per Car: da notare la sintassi
    * molto più snella rispetto a Java
    */
-  def getTarga: String = targa
-  def getNumTelaio: String = numTelaio
+  def getTarga = targa // esempio di type inference
+  def getNumTelaio: String = numTelaio // tipo di ritorno esplicitato
   def getPotenza: Int = potenza
   def getPeso: Int = peso
   def getPrefix: Int = prefix
@@ -38,8 +52,8 @@ abstract class Car(var targa: String, var potenza: Int, var peso: Int) extends V
    * Metodi setter per Car: da notare la sintassi
    * molto più snella rispetto a Java
    */
-  def setTarga(newTarga: String) = targa = newTarga
-  def setNumTelaio(newTelaio: String) = numTelaio = newTelaio
+  def setTarga(newTarga: String) = targa = newTarga // esempio di call-by-value
+  def setNumTelaio(newTelaio: => String) = numTelaio = newTelaio // esempio di call-by-name
   def setPotenza(newPotenza: Int) = potenza = newPotenza
   def setPeso(newPeso: Int) = peso = newPeso
 
