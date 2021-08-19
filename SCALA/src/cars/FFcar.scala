@@ -14,9 +14,9 @@ package cars
  * Sottoclasse costruita sfruttando il costruttore della superclasse Car,
  * a cui vengono aggiunti i campi specifici per le auto tradizionali
  */
-class FFcar(targa: String, potenza: Int, peso: Int, var capacitaSerbatoio: Int = 50, urbano: Double = 4.5,
-  combi: Double = 5.6, extra: Double = 7.3) extends Car(targa, potenza, peso) {
-    
+class FFcar(targa: String, potenza: Int = 100, peso: Int = 1500, var capacitaSerbatoio: Int = 50,
+  urbano: Double = 4.5, combi: Double = 5.6, extra: Double = 7.3) extends Car(targa, potenza, peso) {
+
   /*
    * Creazione mappa per effettuare l'associazione tra
    * la denonminazione del consumo ed il valore vero e proprio
