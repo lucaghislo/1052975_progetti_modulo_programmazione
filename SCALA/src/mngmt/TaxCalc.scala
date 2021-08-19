@@ -1,5 +1,0 @@
-package mngmt
-
-class TaxCalc {
-  
-}

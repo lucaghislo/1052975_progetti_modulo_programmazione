@@ -9,6 +9,7 @@
  */
 
 package cars
+import mngmt._
 
 /*
  * Sottoclasse costruita sfruttando il costruttore della superclasse Car,
@@ -32,6 +33,8 @@ class FFcar(targa: String, potenza: Int = 100, peso: Int = 1500, var capacitaSer
    */
   def getCapSerb: Int = capacitaSerbatoio // getter
   def setCapSerb(newCapSer: Int) = capacitaSerbatoio = newCapSer // setter
+
+  def getConsumi: Map[String, Double] = consumi // getter Map consumi
 
   /*
    * Funzione per effettuare la stampa dell'auto FFcar
@@ -58,6 +61,7 @@ class FFcar(targa: String, potenza: Int = 100, peso: Int = 1500, var capacitaSer
     super.showInfo() // utilizzo del costrutto super per richiamare il metodo della superclasse
     println("Cap. Ser.:  " + getCapSerb + " L")
     printResumee
+    println("\nCon. Med.:  " + FleetStats.consumoMedio(this) + " L/100km")
     println("")
   }
 }
