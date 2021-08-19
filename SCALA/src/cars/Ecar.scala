@@ -59,7 +59,7 @@ class Ecar(targa: String, potenza: Int, peso: Int, var capacitaBatteria: Int = 4
      * Esempio di come in Scala venga ritornata l'ultima espressione
      * senza usare la clausola "return"
      */
-    output + "piero non viene ritornato"
+    output + "Piero non viene ritornato"
     output
   }
 
