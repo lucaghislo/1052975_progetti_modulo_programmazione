@@ -15,7 +15,7 @@ package mngmt
 import scala.collection.mutable._
 import cars._
 
-object FleetStats {
+object FleetStats extends FleetStatsTrait {
   /*
    * Metodo che sfrutta l'operatore foldLeft() tramite il quale
    * viene ritornato il peso totale dei veicoli nella flotta
