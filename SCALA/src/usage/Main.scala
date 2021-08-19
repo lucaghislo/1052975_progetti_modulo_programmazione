@@ -5,23 +5,15 @@ import mngmt._
 
 object Main {
   def main(args: Array[String]): Unit = {
-    /*
-     * try {
-      var ec1: Car = new FFcar("ZA-044-ZB", 56, 40)
-      ec1.showInfo()
 
-      var ec2: Ecar = new Ecar("AZ-655-CR", 32, 6)
-      ec2.showInfo()
-
-      var ec3: Hcar = new Hcar("AZ-655-CR")
-      ec3.showInfo()
-
-    } catch {
-      case _: Throwable => println("\nErrore formato targa")
-    }
-    *
-    */
-
+  /*
+	 * All'utente viene richiesto ad inoltranza di inserire auto:
+	 * alla creazione, vengono inserite in un vector di cui viene restuito
+	 * lo smart pointer all'istanza di Car (una delle sue classi derivate) e
+	 * vengono stampate le informazioni associate all'intera flotta tramite
+	 * la funzione stampaFlott() che sfrutta showInfo() specializzata
+	 * per ciascun tipo di auto
+	 */
     var i: Int = 0
     while (true) {
       try {
