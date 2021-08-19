@@ -30,7 +30,7 @@ class VINbuilder {
 
   /*
    * Funzione per la creazione del numero di telaio all'istanziazione
-   * della classe, con parametro passato by-name
+   * della classe
    */
   def buildVIN: String = {
     var str_prefix = prefix.toString()
