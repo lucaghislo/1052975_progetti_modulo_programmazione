@@ -1,5 +1,5 @@
 /*
- * Ecar.h
+ * Ecar.scala
  * package cars
  * Author: Luca Ghislotti
  *
@@ -19,12 +19,6 @@ import scala.collection.mutable._
  */
 class Ecar(targa: String, potenza: Int, peso: Int, var capacitaBatteria: Int = 400, inputStandards: ArrayBuffer[Int]) extends Car(targa, potenza, peso) {
   /*
-   * Inizializzazione del numero di telaio con prefisso
-   * statico tramite metodo buildVIN
-   */
-  setNumTelaio(buildVIN)
-
-  /*
    * Lista degli standard di ricarica implementata tramite
    * collezione mutable ListBuffer passata come parametro al
    * costruttore
@@ -43,7 +37,7 @@ class Ecar(targa: String, potenza: Int, peso: Int, var capacitaBatteria: Int = 4
    * Overload del costruttore in Scala tramite
    * utilizzo del costruttore ausiliario
    *
-   * Costruttore ausiliario che pone a valori di default
+   * Costruttore ausiliario pone a valori di default
    * gli standard di ricarica senza che vengano definiti dall'utente
    *
    */
@@ -91,7 +85,7 @@ class Ecar(targa: String, potenza: Int, peso: Int, var capacitaBatteria: Int = 4
    * il medesimo metodo della superclasse
    */
   override def showInfo {
-    print("\nELECTRIC ")
+    print("ELECTRIC ")
     super.showInfo()
     println("Batt. cap:  " + this.getCapBat + " KWh")
     this.printResumee(getArrayBufferContent)

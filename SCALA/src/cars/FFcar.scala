@@ -1,5 +1,5 @@
 /*
- * FFcar.h
+ * FFcar.scala
  * package cars
  * Author: Luca Ghislotti
  *
@@ -16,10 +16,7 @@ package cars
  */
 class FFcar(targa: String, potenza: Int, peso: Int, var capacitaSerbatoio: Int = 50, urbano: Double = 4.5,
   combi: Double = 5.6, extra: Double = 7.3) extends Car(targa, potenza, peso) {
-
-  
-  
-  
+    
   /*
    * Creazione mappa per effettuare l'associazione tra
    * la denonminazione del consumo ed il valore vero e proprio
@@ -57,9 +54,10 @@ class FFcar(targa: String, potenza: Int, peso: Int, var capacitaSerbatoio: Int =
       }
     }
 
-    print("\nFOSSILE FUEL ")
+    print("FOSSILE FUEL ")
     super.showInfo() // utilizzo del costrutto super per richiamare il metodo della superclasse
     println("Cap. Ser.:  " + getCapSerb + " L")
     printResumee
+    println("")
   }
 }

@@ -1,5 +1,5 @@
 /*
- * CarFunctions.scala
+ * VINbuilder.scala
  * package cars
  * Author: Luca Ghislotti
  *
@@ -14,6 +14,9 @@ package cars
 /*
  * Definizione del companion object associato alla classe VINbuilder
  * allo scopo di mantenere prefix come campo statico (assente in Scala)
+ *
+ * Oggetto Singleton
+ *
  */
 object VINBuilder {
   var prefix = 0
@@ -34,7 +37,7 @@ class VINbuilder {
     var length = str_prefix.length()
 
     if (length > 10)
-      throw new ArithmeticException("Raggiunto limite immatricolazioni")
+      throw new Exception("Errore")
 
     increasePrefix
     str_prefix + "X" * (10 - length)

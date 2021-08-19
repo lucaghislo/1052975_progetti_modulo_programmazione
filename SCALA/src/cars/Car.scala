@@ -27,6 +27,20 @@ abstract class Car(private var targa: String, private var potenza: Int, private 
 
   // Numero di telaio definito internamente con valore di default
   private var numTelaio: String = "XXXXXXXXXX"
+  
+   /*
+   * Blocco try-catch per intercettare eccezione
+   * sollevata durante la creazione del VIN
+   */
+  try {
+    /*
+     * Inizializzazione del numero di telaio con prefisso
+     * statico tramite metodo buildVIN
+     */
+    setNumTelaio(buildVIN)
+  } catch {
+    case _: Throwable => println("\nErrore: raggiunto limite immatricolazioni")
+  }
 
   // Definizione di Values, immutable
   private val minPotenza = 30; // potenza minima (costante) per inizializzazione
