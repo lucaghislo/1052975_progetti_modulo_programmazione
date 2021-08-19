@@ -1,3 +1,13 @@
+/*
+ * FleetStatsTrait.scala
+ * package mngmt
+ * Author: Luca Ghislotti
+ *
+ * Interfaccia (Scala Trait) che contiene tutti i metodi
+ * implementati dall'oggetto Singleton FleetStats
+ *
+ */
+
 package mngmt
 import scala.collection.mutable._
 import cars._

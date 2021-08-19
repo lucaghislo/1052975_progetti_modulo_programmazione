@@ -28,7 +28,7 @@ object Garage {
   /*
    * Metodo per la creazione di una nuova auto
    */
-  def newAuto(Iteration: Int) {
+  def newAuto(Iteration: => Int) {
     // Richiesta all'utente
     if (Iteration == 0) print("Targa: ") else print("\nTarga: ")
       
