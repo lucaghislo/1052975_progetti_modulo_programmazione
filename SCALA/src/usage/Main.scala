@@ -23,6 +23,7 @@ object Main {
 
         println("\n    Peso totale:  " + FleetStats.pesoTotale(Garage.flotta) + " Kg")
         println("Massima potenza:  " + FleetStats.maxPotenza(Garage.flotta) + " KW")
+        println("Massima potenza:  " + FleetStats.MapReduce(Garage.flotta) + " CV")
       } catch {
         case _: Throwable => println("\nErrore formato targa")
       }

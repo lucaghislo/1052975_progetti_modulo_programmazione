@@ -68,4 +68,45 @@ object FleetStats {
     // Calcolo consumo medio
     lista.reduce((a, b) => a + b) / lista.length
   }
+
+  /*
+   * Metodo che permette di ottenere una lista delle auto che
+   * devono pagare il superbollo (potenza > 183kW)
+   *
+   * Il metodo sfrutta il costrutto filter
+   */
+  def autoSuperbollo(flotta: ListBuffer[Car]): ListBuffer[Car] = {
+    flotta.filter(_.getPotenza > 184)
+  }
+
+  /*
+   * Metodo che calcola la potenza massima in CV sfruttando:
+   * - Map: per mappare i kW in CV
+   * - Reduce: per cercare la massima potenza in CV
+   */
+  def MapReduce(flotta: ListBuffer[Car]): Int = {
+
+    /*
+     * Funzione di mapping kW -> CV (funzione innestata)
+     */
+    def map_kwToCV(veicolo: Car): Car = {
+      veicolo.setPotenza((veicolo.getPotenza * 1.36).toInt)
+      veicolo
+    }
+
+    /*
+     * Funzione di reduce per ottenere la massima potenza in
+     * cavalli (funzione innestata)
+     */
+    def reduce_maxPower(flottaCV: ListBuffer[Car]): Int = {
+      /*
+       * Uso fold anzichè reduce poichè passo dal tipo Car al tipo Int
+       * La primitiva reduce non permette il cambio di tipo in return
+       * rispetto al tipo di dato dell'elemento della List in input
+       */
+      flottaCV.foldRight(flottaCV.head.getPotenza)((veicolo, temp) => temp max veicolo.getPotenza)
+    }
+
+    reduce_maxPower(flotta.map(map_kwToCV))
+  }
 }
