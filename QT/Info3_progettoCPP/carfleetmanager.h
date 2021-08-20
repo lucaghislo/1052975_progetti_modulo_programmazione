@@ -18,6 +18,8 @@ public:
 private slots:
     void on_pulsanteSubmit_clicked();
 
+    void on_tipoAuto_currentIndexChanged(int index);
+
 private:
     Ui::CarFleetManager *ui;
 };

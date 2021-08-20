@@ -30,7 +30,7 @@ string Hcar::showInfo() {
 }
 
 string Hcar::printResumee() {
-    return "  Cap. Ser.:  " + std::to_string(getCapSerb()) + " L\n  Bat. cap.:  " + std::to_string(getCapBat()) + " kWh\n  Cap. Co.:  " + std::to_string(capacitaCombinata) + " km\n";
+    return "  Cap. Ser.:  " + std::to_string(getCapSerb()) + " L\n  Bat. cap.:  " + std::to_string(getCapBat()) + " kWh\n   Cap. Co.:  " + std::to_string(capacitaCombinata) + " km\n" + Ecar::printResumee();
 }
 
 string Hcar::getClassName() {

@@ -135,7 +135,7 @@ string Car::showInfo() {
     string VIN = getVIN();
     string potenza = std::to_string(getPotenza());
     string peso = std::to_string(getPeso());
-    return "CAR DATA SUMMARY\n        Targa:  " + targa + "\n           VIN:  " + VIN + "\n   Potenza:  " + potenza + " kW\n         Peso:  " +peso + " kg\n";
+    return "CAR DATA SUMMARY\n      Targa:  " + targa + "\n        VIN:  " + VIN + "\n    Potenza:  " + potenza + " kW\n       Peso:  " +peso + " kg\n";
 }
 
 /*

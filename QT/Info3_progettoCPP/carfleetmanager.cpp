@@ -10,12 +10,20 @@ using namespace std;
 #include "Hcar.h"
 #include "Ecar.h"
 #include <QTextEdit>
+#include <QColorDialog>
 
 CarFleetManager::CarFleetManager(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::CarFleetManager)
 {
     ui->setupUi(this);
+
+    ui->visualizzatore->setDisabled(true);
+
+    QColor color = QColorDialog::getColor(Qt::white,this);
+    QPalette p = ui->visualizzatore->palette();
+    p.setColor(QPalette::Base, Qt::white);
+
 }
 
 CarFleetManager::~CarFleetManager()
@@ -23,7 +31,12 @@ CarFleetManager::~CarFleetManager()
     delete ui;
 }
 
-
+/*
+ *  Metodo che preleva i valori dalla caselle di testo, costruisce
+ *  l'auto (in funzione del tipo di auto selezionato) con i dati
+ *  inseriti ed effettua il refresh dell'output con lo stato
+ *  attuale della flotta
+ */
 void CarFleetManager::on_pulsanteSubmit_clicked()
 {
     QString Qtarga = ui -> targa_input -> text();
@@ -69,9 +82,59 @@ void CarFleetManager::on_pulsanteSubmit_clicked()
         break;
     }
 
-    string text = "ciao";
     cout << g.stampaFlotta();
     ui->visualizzatore->setText(QString::fromStdString(g.stampaFlotta()));
 
+    ui -> targa_input -> setText("");
+    ui -> potenza_input -> setText("");
+    ui -> peso_input -> setText("");
+    ui -> tipoAuto -> setCurrentIndex(0);
+    ui -> capSerb_input -> setText("");
+    ui -> consUrbano_input -> setText("");
+    ui -> consCombinato_input -> setText("");
+    ui -> consExtra_input -> setText("");
+    ui -> stdCarica1_input -> setText("");
+    ui -> stdCarica2_input -> setText("");
+    ui -> stdCarica3_input -> setText("");
+
 }
 
+/*
+ *  Metodo per garantire la coerenza dei campi in funione del
+ *  tipo di auto mostrato dal QComboBox
+ */
+void CarFleetManager::on_tipoAuto_currentIndexChanged(int index)
+{
+    switch(ui->tipoAuto->currentIndex()) {
+    case 0: {
+
+        ui->stdCarica1_input->setEnabled(false);
+        ui->stdCarica2_input->setEnabled(false);
+        ui->stdCarica3_input->setEnabled(false);
+        ui->capSerb_input->setEnabled(true);
+        ui->consCombinato_input->setEnabled(true);
+        ui->consExtra_input->setEnabled(true);
+        ui->consUrbano_input->setEnabled(true);
+        break;
+    }
+    case 1: {
+        ui->stdCarica1_input->setEnabled(false);
+        ui->stdCarica2_input->setEnabled(false);
+        ui->stdCarica3_input->setEnabled(false);
+        ui->capSerb_input->setEnabled(false);
+        ui->consCombinato_input->setEnabled(false);
+        ui->consExtra_input->setEnabled(false);
+        ui->consUrbano_input->setEnabled(false);
+        break;
+    }
+    case 2:
+        ui->stdCarica1_input->setEnabled(true);
+        ui->stdCarica2_input->setEnabled(true);
+        ui->stdCarica3_input->setEnabled(true);
+        ui->capSerb_input->setEnabled(true);
+        ui->consCombinato_input->setEnabled(true);
+        ui->consExtra_input->setEnabled(true);
+        ui->consUrbano_input->setEnabled(true);
+        break;
+    }
+}

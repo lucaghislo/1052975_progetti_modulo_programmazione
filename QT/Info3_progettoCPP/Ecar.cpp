@@ -46,7 +46,7 @@ short Ecar::getCapBat() {
  * Stampa degli standard sfruttando iteratore su STL vector
  */
 string Ecar::printResumee() {
-    string resumee = "Standards:  ";
+    string resumee = "  Standards:  ";
     for (vector<int>::iterator it = standards.begin(); it != standards.end();
             ++it)
         resumee = resumee + std::to_string(*it) + "  ";
