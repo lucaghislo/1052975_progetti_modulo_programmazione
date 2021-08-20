@@ -1,5 +1,4 @@
 //// starting scenario
-//// starting scenario
 scenario ROAD_SCENARIO
 load Stoplight.asm
 check time = -1;
