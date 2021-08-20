@@ -7,7 +7,7 @@
  * 
  * Il semaforo è rappresentato tra 3 colori:
  * - VERDE: permette il passaggio delle auto (durata 20 secondi)
- * - GIALLO: avvisa dell'arrivo del rosso (durata 5 secondi)
+ * - ARANCIONE: avvisa dell'arrivo del rosso (durata 5 secondi)
  * - ROSSO: impedisce il passaggio (durata 10 secondi)
  * 
  * All'avvio il semaforo si trova in uno qualsiasi dei 3 colori 
@@ -15,7 +15,7 @@
  * del semaforo).
  * 
  * L'aspetto critico è rappresentanto dalla sequenza temporale con cui
- * i colori si presentano: VERDE -> GIALLO -> ROSSO -> VERDE
+ * i colori si presentano: VERDE -> ARANCIONE -> ROSSO -> VERDE
  *      
  */
  
@@ -30,7 +30,7 @@ signature:
 	/*
 	 * Dichiarazione domini (enum)
 	 */
-	enum domain Colore = { VERDE | GIALLO | ROSSO } // dominio colore semaforo
+	enum domain Colore = { VERDE | ARANCIONE | ROSSO } // dominio colore semaforo
 	domain Seconds subsetof Integer // dominio tempo (secondi)
 	
 	/*
@@ -57,7 +57,7 @@ definitions:
 	 */
 	function f_colorDuration($colore in Colore) =
 		if ($colore = VERDE) then 20
-		else if ($colore = GIALLO) then 5
+		else if ($colore = ARANCIONE) then 5
 		else 10 endif endif
 	
 	/*
@@ -65,8 +65,8 @@ definitions:
 	 * dal semaforo
 	 */
 	function f_nextColor($coloreAttuale in Colore) = 
-		if ($coloreAttuale = VERDE) then GIALLO
-		else if ($coloreAttuale = GIALLO) then ROSSO
+		if ($coloreAttuale = VERDE) then ARANCIONE
+		else if ($coloreAttuale = ARANCIONE) then ROSSO
 		else VERDE endif endif
 	
 	/*
