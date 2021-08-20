@@ -7,8 +7,7 @@ QT_BEGIN_NAMESPACE
 namespace Ui { class CarFleetManager; }
 QT_END_NAMESPACE
 
-class CarFleetManager : public QWidget
-{
+class CarFleetManager : public QWidget {
     Q_OBJECT
 
 public:
@@ -23,4 +22,5 @@ private slots:
 private:
     Ui::CarFleetManager *ui;
 };
+
 #endif // CARFLEETMANAGER_H
