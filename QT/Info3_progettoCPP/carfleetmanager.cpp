@@ -12,10 +12,7 @@ using namespace std;
 #include <QTextEdit>
 #include <QColorDialog>
 
-CarFleetManager::CarFleetManager(QWidget *parent)
-    : QWidget(parent)
-    , ui(new Ui::CarFleetManager)
-{
+CarFleetManager::CarFleetManager(QWidget *parent): QWidget(parent), ui(new Ui::CarFleetManager) {
     ui->setupUi(this);
 
     ui->stdCarica1_input->setEnabled(false);
@@ -23,8 +20,7 @@ CarFleetManager::CarFleetManager(QWidget *parent)
     ui->stdCarica3_input->setEnabled(false);
 }
 
-CarFleetManager::~CarFleetManager()
-{
+CarFleetManager::~CarFleetManager() {
     delete ui;
 }
 
@@ -35,8 +31,7 @@ CarFleetManager::~CarFleetManager()
  *  inseriti ed effettua il refresh dell'output con lo stato
  *  attuale della flotta
  */
-void CarFleetManager::on_pulsanteSubmit_clicked()
-{
+void CarFleetManager::on_pulsanteSubmit_clicked() {
     QString Qtarga = ui -> targa_input -> text();
     int potenza = ui -> potenza_input -> text().toInt();
     int peso = ui -> peso_input -> text().toInt();
@@ -105,8 +100,7 @@ void CarFleetManager::on_pulsanteSubmit_clicked()
  *  Metodo per garantire la coerenza dei campi in funione del
  *  tipo di auto mostrato dal QComboBox
  */
-void CarFleetManager::on_tipoAuto_currentIndexChanged(int index)
-{
+void CarFleetManager::on_tipoAuto_currentIndexChanged(int index) {
     switch(ui->tipoAuto->currentIndex()) {
     case 0: {
 
