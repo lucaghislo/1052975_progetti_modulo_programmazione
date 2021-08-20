@@ -1,7 +1,7 @@
 //// starting scenario
 //// starting scenario
 scenario ROAD_SCENARIO
-load Semaforo.asm
+load Stoplight.asm
 check time = -1;
 check stoplightColor = undef;
 step

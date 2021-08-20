@@ -19,7 +19,7 @@
  *      
  */
  
-asm Semaforo
+asm Stoplight
 import StandardLibrary
 
 /*
