@@ -15,8 +15,8 @@ FFcar::FFcar(char *targaInput, int pesoInput, int potenzaInput,
         short fuelCapacity, double urbano, double combinato, double extra) :
         Car(targaInput, pesoInput, potenzaInput), capacitaSerbatoio(
                 fuelCapacity) {
-    consumi.insert(make_pair("    Urbano ", urbano));
-    consumi.insert(make_pair("    Combi. ", combinato));
+    consumi.insert(make_pair("     Urbano", urbano));
+    consumi.insert(make_pair("     Combi.", combinato));
     consumi.insert(make_pair("      Extra", extra));
 }
 
