@@ -172,6 +172,7 @@ public:
         font3.setFamilies({QString::fromUtf8("Courier New")});
         font3.setPointSize(12);
         visualizzatore->setFont(font3);
+        visualizzatore->setReadOnly(true);
 
         retranslateUi(CarFleetManager);
 

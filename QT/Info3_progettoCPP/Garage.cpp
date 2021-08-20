@@ -10,6 +10,7 @@
 #include <iostream>
 using namespace std;
 #include <cstring>
+#include <string>
 #include <memory>
 #include "Garage.h"
 #include "Car.h"
@@ -27,6 +28,9 @@ void Garage::newAuto() {
 
     cout << "Targa: ";
     cin >> targa;
+
+    strcpy(targa_ptr, targa.data());
+
     cout << "Peso: ";
     cin >> peso;
     cout << "Potenza: ";
@@ -35,8 +39,6 @@ void Garage::newAuto() {
     int carType;
     cout << "Tipo auto: ";
     cin >> carType;
-
-    strcpy(targa_ptr, targa.data());
 
     switch (carType) {
     // FFcar

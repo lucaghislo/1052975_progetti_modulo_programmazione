@@ -54,8 +54,10 @@ Car::Car() {
  */
 Car::Car(char *targaInput, int pesoInput, int potenzaInput) :
         peso(pesoInput), potenza(potenzaInput) {
+
     // Allocazione area di memoria su heap per salvataggio targa
     targa = (char*) malloc(sizeof(char) * 9);
+    strcpy(targa, "XX-XXX-XX");
     strcpy(targa, targaInput); // targa definita da parametro
 
     try {

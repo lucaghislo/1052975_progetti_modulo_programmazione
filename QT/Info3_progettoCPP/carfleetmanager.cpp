@@ -18,18 +18,16 @@ CarFleetManager::CarFleetManager(QWidget *parent)
 {
     ui->setupUi(this);
 
-    ui->visualizzatore->setDisabled(true);
-
-    QColor color = QColorDialog::getColor(Qt::white,this);
-    QPalette p = ui->visualizzatore->palette();
-    p.setColor(QPalette::Base, Qt::white);
-
+    ui->stdCarica1_input->setEnabled(false);
+    ui->stdCarica2_input->setEnabled(false);
+    ui->stdCarica3_input->setEnabled(false);
 }
 
 CarFleetManager::~CarFleetManager()
 {
     delete ui;
 }
+
 
 /*
  *  Metodo che preleva i valori dalla caselle di testo, costruisce
@@ -52,6 +50,10 @@ void CarFleetManager::on_pulsanteSubmit_clicked()
     int stdCarica3 = ui -> stdCarica3_input -> text().toInt();
 
     std::string targa = Qtarga.toLocal8Bit().constData();
+
+    if(targa.compare("") == 0)
+       targa = "XX-XXX-XX";
+
     char *targa_ptr = (char*) malloc(sizeof(char) * targa.length());
     strcpy(targa_ptr, targa.data());
 
