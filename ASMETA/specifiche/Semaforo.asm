@@ -1,80 +1,125 @@
-/* ProgettoASM_Semaforo */
+/*
+ * Semaforo.asm
+ * Author: Luca Ghislotti
+ *
+ * Piccola implementazione di una Abstract State Machine
+ * che simula un semaforo.
+ * 
+ * Il semaforo è rappresentato tra 3 colori:
+ * - VERDE: permette il passaggio delle auto (durata 20 secondi)
+ * - GIALLO: avvisa dell'arrivo del rosso (durata 5 secondi)
+ * - ROSSO: impedisce il passaggio (durata 10 secondi)
+ * 
+ * All'avvio il semaforo si trova in uno qualsiasi dei 3 colori 
+ * (il colore all'avvio non è rilevanete per il corretto funzionamento
+ * del semaforo).
+ * 
+ * L'aspetto critico è rappresentanto dalla sequenza timerale con cui
+ * i colori si presentano: VERDE -> GIALLO -> ROSSO -> VERDE
+ *      
+ */
+ 
 asm Semaforo
-
 import StandardLibrary
 
-// Dichiarazione universi e funzioni
+/*
+ * Dichiarazione universi e funzioni
+ */
 signature:
 
-	// Dichiarazione dei domini, enum
-	enum domain Colore = { VERDE | GIALLO | ROSSO }
-	domain Seconds subsetof Integer
+	/*
+	 * Dichiarazione domini (enum)
+	 */
+	enum domain Colore = { VERDE | GIALLO | ROSSO } // dominio colore semaforo
+	domain Seconds subsetof Integer // dominio tempo (secondi)
 	
-	// Variabili e funzioni controlled (leggibili e scrivibili)
-	dynamic controlled coloreSemaforo: Colore
-	dynamic controlled tempo: Seconds
-	dynamic controlled messaggio : String
+	/*
+	 * Domini e funzioni controlled (leggibili e scrivibili)
+	 */
+	dynamic controlled stoplightColor: Colore // colore assunto dal semaforo
+	dynamic controlled time: Seconds // tempo
+	dynamic controlled action : String // azione implementata
 	
-	// Funzioni derivate
-	derived maxTempo: Colore -> Seconds
-	derived prossimoColore: Colore -> Colore
+	/*
+	 * Funzioni derivate
+	 */
+	derived colorDuration: Colore -> Seconds // ritorna la durata massima di ciascun colore
+	derived nextColor: Colore -> Colore // ritorna il successivo colore dato il colore attuale
 	
-
-// Definizioni delle funzioni, delle regole, macro regole e dalla regola main.
+/*
+ * Definizione delle funzioni, delle regole, macro regole e dalla regola main.
+ */
 definitions:
 	
-	// Funzione che ritorna il max della durata di tempo di ciscun colore
-	function maxTempo($colore in Colore) =
-		if ($colore = VERDE) then 40
+	/*
+	 * Funzione che ritorna la durata massima associata a ciascun colore del semaforo
+	 */
+	function colorDuration($colore in Colore) =
+		if ($colore = VERDE) then 20
 		else if ($colore = GIALLO) then 5
-		else 15 endif endif
+		else 10 endif endif
 	
-	// Funzione che ritorna il prossimo colore dato in input il colore attuale
-	function prossimoColore($coloreAttuale in Colore) = 
+	/*
+	 * Funzione che ritorna il successivo colore dato il colore attualmente mostrato
+	 * dal semaforo
+	 */
+	function nextColor($coloreAttuale in Colore) = 
 		if ($coloreAttuale = VERDE) then GIALLO
 		else if ($coloreAttuale = GIALLO) then ROSSO
 		else VERDE endif endif
 	
-	// Regola per passare al prossimo stato, prossimo colore del semaforo
-	// e per settare il tempo al max del prossimo colore
+	/*
+	 * Regola per impostare il successivo stato, impostando il prossimo colore
+	 * ottenuto tramite funzione nextColor() ed impostando il timer alla durata del 
+	 * successivo colore tramite funzione colorDuration()
+	 */
 	rule r_cambioColore = 
 		par
-			tempo := maxTempo( prossimoColore(coloreSemaforo) )
-			coloreSemaforo := prossimoColore(coloreSemaforo)
-			messaggio := "Cambio colore"
+			time := colorDuration( nextColor(stoplightColor) )
+			stoplightColor := nextColor(stoplightColor)
+			action := "change_next_color"
 		endpar
 		
-	
-	// Macro regola che decrementa il tempo e
-	// chiama la regola che porta al prossimo colore
-	// se i secondi sono diventati 0
-	macro rule r_decrementaTempo =
-		if (tempo > 0) then
+	/*
+	 * Macro-regola che effettua il decremento del tempo ed invoca la regola
+	 * di cambio colore nel caso in cui il timer associato all'attuale colore
+	 * sia divenuto 0 (cambio colore necessario)
+	 */
+	macro rule r_decrementaUnSecondo =
+		if (time > 0) then
 			par
-				tempo := tempo - 1
-				messaggio := "Decremento secondi"
+				time := time - 1
+				action := "decremento_unsecondo"
 			endpar
 		else r_cambioColore[] 
 		endif
 		
-	// Macro regola che simola l'inizializzazione e decremento del tempo del semaforo
-	macro rule r_simolaSemaforo =
-	par
-		// Solo la prima volta sceglie a random uno dei tre colori dell'enum Colore
-		if (tempo = -1) then
-			choose $colore in Colore with true do
-			tempo := maxTempo($colore)
-		endif
+	/*
+	 * Macro-regola che effettua l'inizializzazione del semaforo con un colore
+	 * random nel caso in cui il tempo sia impostato a -1, con il quale si indica
+	 * che il semaforo è non funzionante
+	 */	
+	macro rule r_stoplightInitialize =
+		par
+			// Solo la prima volta sceglie a random uno dei tre colori dell'enum Colore
+		if (time = -1) then
+				choose $colore in Colore with true do
+				time := colorDuration($colore)
+			endif
+			
+			// Decrementa i secondi
+			r_decrementaUnSecondo[] 
+		endpar
 		
-		// Decrementa i secondi
-		r_decrementaTempo[] 
-	endpar
-   
-	//Definizione della regola principale main. Chiama il simolatore di semaforo
-	main rule r_Main = r_simolaSemaforo[]
+	/*
+	 * Definizione della regola main con la quale il semaforo viene attivato ed 
+	 * inizializzato
+	 */
+	main rule r_Main = r_stoplightInitialize[]
 
-// Valori di inizializzazione
-default init initialize:
-
-	// Stato iniziale tempo = -1 per indicare che il semaforo non e in funzione.
-	function tempo = -1
+	/*
+	 * Definizione dei valori di inizializzazione
+	 */
+	default init initialize:
+	
+		function time = -1 // semaforo non attivo

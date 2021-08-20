@@ -1,0 +1,86 @@
+//// starting scenario
+scenario ROAD_SCENARIO
+load Semaforo.asm
+check time = -1;
+check stoplightColor = undef;
+step
+check time = 20;
+check stoplightColor = VERDE;
+check action = Cambio colore;
+step
+check time = 19;
+check stoplightColor = VERDE;
+check action = Decremento secondi;
+step
+check time = 18;
+check stoplightColor = VERDE;
+check action = Decremento secondi;
+step
+check time = 17;
+check stoplightColor = VERDE;
+check action = Decremento secondi;
+step
+check time = 16;
+check stoplightColor = VERDE;
+check action = Decremento secondi;
+step
+check time = 15;
+check stoplightColor = VERDE;
+check action = Decremento secondi;
+step
+check time = 14;
+check stoplightColor = VERDE;
+check action = Decremento secondi;
+step
+check time = 13;
+check stoplightColor = VERDE;
+check action = Decremento secondi;
+step
+check time = 12;
+check stoplightColor = VERDE;
+check action = Decremento secondi;
+step
+check time = 11;
+check stoplightColor = VERDE;
+check action = Decremento secondi;
+step
+check time = 10;
+check stoplightColor = VERDE;
+check action = Decremento secondi;
+step
+check time = 9;
+check stoplightColor = VERDE;
+check action = Decremento secondi;
+step
+check time = 8;
+check stoplightColor = VERDE;
+check action = Decremento secondi;
+step
+check time = 7;
+check stoplightColor = VERDE;
+check action = Decremento secondi;
+step
+check time = 6;
+check stoplightColor = VERDE;
+check action = Decremento secondi;
+step
+check time = 5;
+check stoplightColor = VERDE;
+check action = Decremento secondi;
+step
+check time = 4;
+check stoplightColor = VERDE;
+check action = Decremento secondi;
+step
+check time = 3;
+check stoplightColor = VERDE;
+check action = Decremento secondi;
+step
+check time = 2;
+check stoplightColor = VERDE;
+check action = Decremento secondi;
+step
+check time = 1;
+check stoplightColor = VERDE;
+check action = Decremento secondi;
+step
