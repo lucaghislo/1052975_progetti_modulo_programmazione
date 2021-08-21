@@ -1,22 +1,30 @@
 /*
- * Semaforo.asm
- * Author: Luca Ghislotti
- *
- * Piccola implementazione di una Abstract State Machine
- * che simula un semaforo.
- * 
- * Il semaforo è rappresentato tra 3 colori:
- * - VERDE: permette il passaggio delle auto (durata 20 secondi)
- * - ARANCIONE: avvisa dell'arrivo del rosso (durata 5 secondi)
- * - ROSSO: impedisce il passaggio (durata 10 secondi)
- * 
- * All'avvio il semaforo si trova in uno qualsiasi dei 3 colori 
- * (il colore all'avvio non è rilevante per il corretto funzionamento
- * del semaforo).
- * 
- * L'aspetto critico è rappresentanto dalla sequenza temporale con cui
- * i colori si presentano: VERDE -> ARANCIONE -> ROSSO -> VERDE
- *      
+ ============================================================================
+ Name        : Stoplight.asm
+ Folder      : specifiche
+ Author      : Luca Ghislotti
+ Version     : 1.0
+ Copyright   : MIT License
+ Description : Piccola implementazione di una Abstract State Machine
+               che simula un semaforo.
+               
+               Il semaforo è rappresentato tra 3 colori:
+              
+               - VERDE: permette il passaggio delle auto 
+                        (durata 20 secondi)
+               - ARANCIONE: avvisa dell'arrivo del rosso (durata
+                            5 secondi)
+               - ROSSO: impedisce il passaggio (durata 10 secondi)
+  
+               All'avvio il semaforo si trova in uno qualsiasi dei 3 colori 
+               (il colore all'avvio non è rilevante per il corretto 
+               funzionamento del semaforo).
+ 
+               L'aspetto critico è rappresentanto dalla sequenza temporale 
+               con cui i colori si presentano: 
+               
+               VERDE -> ARANCIONE -> ROSSO -> VERDE
+ ============================================================================
  */
  
 asm Stoplight
