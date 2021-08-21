@@ -1,12 +1,14 @@
 /*
- * Hcar.h
- * Author: Luca Ghislotti
- *
- * Auto ibrida (H: Hybrid) è sia un'auto FFcar (Fossile Fuel) che
- * un'auto Ecar (E: electric). Questa classe dimostra i concetti
- * di ereditarietà multipla ed i problemi che ne derivano, come
- * il name clashing
- *
+ ============================================================================
+ Name        : Hacar.h
+ Author      : Luca Ghislotti
+ Version     : 1.0
+ Copyright   : MIT License
+ Description : Auto ibrida (H: Hybrid) è sia un'auto FFcar (Fossile Fuel) che
+               un'auto Ecar (E: electric). Questa classe dimostra i concetti
+               di ereditarietà multipla ed i problemi che ne derivano, come
+               il name clashing
+ ============================================================================
  */
 
 #ifndef HCAR_H_

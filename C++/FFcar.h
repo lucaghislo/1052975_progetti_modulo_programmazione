@@ -1,10 +1,12 @@
 /*
- * FFcar.h
- * Author: Luca Ghislotti
- *
- * Classe derivata da Car che rappresenta l'auto a combustibile
- * fossile (FF: Fossile Fuel)
- *
+ ============================================================================
+ Name        : FFcar.h
+ Author      : Luca Ghislotti
+ Version     : 1.0
+ Copyright   : MIT License
+ Description : Classe derivata da Car che rappresenta l'auto a combustibile
+			   fossile (FF: Fossile Fuel)
+ ============================================================================
  */
 
 #ifndef FFCAR_H_

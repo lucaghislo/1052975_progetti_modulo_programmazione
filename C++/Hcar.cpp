@@ -1,9 +1,11 @@
 /*
- * Hcar.cpp
- * Author: Luca Ghislotti
- *
- * Implementazione della classe Hcar
- *
+ ============================================================================
+ Name        : Hacar.cpp
+ Author      : Luca Ghislotti
+ Version     : 1.0
+ Copyright   : MIT License
+ Description : Implementazione della classe Hcar
+ ============================================================================
  */
 
 #include <iostream>

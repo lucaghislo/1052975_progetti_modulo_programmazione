@@ -1,9 +1,11 @@
 /*
- * Car.cpp
- * Author: Luca Ghislotti
- *
- * File di implementazione dei metodi della classe Car
- *
+ ============================================================================
+ Name        : Car.cpp
+ Author      : Luca Ghislotti
+ Version     : 1.0
+ Copyright   : MIT License
+ Description : File di implementazione dei metodi della classe Car
+ ============================================================================
  */
 
 #include <iostream>

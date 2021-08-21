@@ -1,9 +1,11 @@
 /*
- * Garage.h
- * Author: Luca Ghislotti
- *
- * Classe Garage permette di utilizzare le auto e gestirle
- *
+ ============================================================================
+ Name        : Garage.h
+ Author      : Luca Ghislotti
+ Version     : 1.0
+ Copyright   : MIT License
+ Description : Classe Garage permette di utilizzare le auto e gestirle
+ ============================================================================
  */
 
 #ifndef GARAGE_H_

@@ -1,9 +1,11 @@
 /*
- * Ecar.cpp
- * Author: Luca Ghislotti
- *
- * Implementazione delle classe Ecar
- *
+ ============================================================================
+ Name        : Ecar.cpp
+ Author      : Luca Ghislotti
+ Version     : 1.0
+ Copyright   : MIT License
+ Description : Implementazione delle classe Ecar
+ ============================================================================
  */
 
 #include <iostream>

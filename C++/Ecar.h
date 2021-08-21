@@ -1,10 +1,12 @@
 /*
- * Ecar.h
- * Author: Luca Ghislotti
- *
- * Classe derivata da Car che rappresenta l'auto elettrica
- * (E: Electric)
- *
+ ============================================================================
+ Name        : Ecar.h
+ Author      : Luca Ghislotti
+ Version     : 1.0
+ Copyright   : MIT License
+ Description : Classe derivata da Car che rappresenta l'auto elettrica
+               (E: Electric)
+ ============================================================================
  */
 
 #ifndef ECAR_H_

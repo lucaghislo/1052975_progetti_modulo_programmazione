@@ -1,11 +1,13 @@
 /*
- * TaxCalc.h
- * Author: Luca Ghislotti
- *
- * Classe indipendente dalla gerarchia Car - Ecar - FFcar, amica della
- * classe Car, che accedere al campo "potenza" della classe Car allo scopo
- * di effettuare il calcolo del bollo auto
- *
+ ============================================================================
+ Name        : TaxCalc.h
+ Author      : Luca Ghislotti
+ Version     : 1.0
+ Copyright   : MIT License
+ Description : Classe indipendente dalla gerarchia Car - Ecar - FFcar, amica
+               della classe Car, che accedere al campo "potenza" della classe
+               Car allo scopo di effettuare il calcolo del bollo auto
+ ============================================================================
  */
 
 #ifndef TAXCALC_H_

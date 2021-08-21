@@ -1,11 +1,13 @@
 /*
- * Car.h
- * Author: Luca Ghislotti
- *
- * Header della classe automobile utilizzata come
- * template per la creazione delle automobili elettriche, ibride e
- * tradizionali nella forma di classi derivate
- *
+ ============================================================================
+ Name        : Car.h
+ Author      : Luca Ghislotti
+ Version     : 1.0
+ Copyright   : MIT License
+ Description : Header della classe automobile utilizzata come
+ 	 	 	   template per la creazione delle automobili elettriche,
+ 	 	 	   ibride e tradizionali nella forma di classi derivate
+ ============================================================================
  */
 
 #ifndef CAR_HPP_

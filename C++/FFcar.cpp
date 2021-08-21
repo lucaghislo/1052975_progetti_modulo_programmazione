@@ -1,9 +1,11 @@
 /*
- * FFcar.cpp
- * Author: Luca Ghislotti
- *
- * Implementazione della classe FFcar
- *
+ ============================================================================
+ Name        : FFcar.cpp
+ Author      : Luca Ghislotti
+ Version     : 1.0
+ Copyright   : MIT License
+ Description : Implementazione della classe FFcar
+ ============================================================================
  */
 
 #include <iostream>

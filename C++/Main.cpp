@@ -1,10 +1,12 @@
 /*
- * Main.cpp
- * Author: Luca Ghislotti
- *
- * Classe main del progetto, in cui ne viene testato
- * il funzionamento
- *
+ ============================================================================
+ Name        : Main.cpp
+ Author      : Luca Ghislotti
+ Version     : 1.0
+ Copyright   : MIT License
+ Description : Classe main del progetto, in cui ne viene testato
+	           il funzionamento
+ ============================================================================
  */
 
 #include <iostream>
