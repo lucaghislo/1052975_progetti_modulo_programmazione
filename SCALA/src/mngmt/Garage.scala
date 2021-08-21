@@ -1,12 +1,15 @@
 /*
- * Garage.scala
- * package mngmt
- * Author: Luca Ghislotti
- *
- * Oggetto Garage funge da singleton (assume il medesimo ruolo
- * del Design Pattern "singleton" implementato in C++) come strumento
- * per la gestione della flotta di auto, con i relativi metodi associati
- *
+ ============================================================================
+ Name        : Garage.scala
+ Package     : package mngmt
+ Author      : Luca Ghislotti
+ Version     : 1.0
+ Copyright   : MIT License
+ Description : Oggetto Garage funge da singleton (assume il medesimo ruolo
+               del Design Pattern "singleton" implementato in C++) come
+               strumento per la gestione della flotta di auto, con i 
+               relativi metodi associati
+ ============================================================================
  */
 
 package mngmt

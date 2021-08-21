@@ -1,11 +1,13 @@
 /*
- * FFcar.scala
- * package cars
- * Author: Luca Ghislotti
- *
- * Classe FFcar ottenuta come sottoclasse dalla superclasse
- * Car, definita come interfaccia (Scala trait)
- *
+ ============================================================================
+ Name        : FFcar.scala
+ Package     : package cars
+ Author      : Luca Ghislotti
+ Version     : 1.0
+ Copyright   : MIT License
+ Description : Classe FFcar ottenuta come sottoclasse dalla superclasse
+               Car, definita come interfaccia (Scala trait)
+ ============================================================================
  */
 
 package cars

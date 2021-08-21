@@ -1,14 +1,15 @@
 /*
- * FleetStats.scala
- * package mngmt
- * Author: Luca Ghislotti
- *
- * Oggetto FleetStats (Singleton) ha lo scopo di effettuare
- * calcoli sulla flotta auto sfruttando i paradigmi
- * Filter, Map, Reduce e Fold
- *
- * Esempio di Functional Programming in Scala
- *
+ ============================================================================
+ Name        : FleetStats.scala
+ Package     : package mngmt
+ Author      : Luca Ghislotti
+ Version     : 1.0
+ Copyright   : MIT License
+ Description : Oggetto FleetStats (Singleton) ha lo scopo di effettuare
+               calcoli sulla flotta auto sfruttando i paradigmi
+               Filter, Map, Reduce e Fold
+               Esempio di Functional Programming in Scala
+ ============================================================================
  */
 
 package mngmt

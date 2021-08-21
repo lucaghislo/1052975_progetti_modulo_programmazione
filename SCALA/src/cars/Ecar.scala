@@ -1,11 +1,13 @@
 /*
- * Ecar.scala
- * package cars
- * Author: Luca Ghislotti
- *
- * Classe Ecar ottenuta come sottoclasse dalla superclasse
- * Car definita come classe astratta
- *
+ ============================================================================
+ Name        : Ecar.scala
+ Package     : package cars
+ Author      : Luca Ghislotti
+ Version     : 1.0
+ Copyright   : MIT License
+ Description : Classe Ecar ottenuta come sottoclasse dalla superclasse
+               Car definita come classe astratta
+ ============================================================================
  */
 
 package cars

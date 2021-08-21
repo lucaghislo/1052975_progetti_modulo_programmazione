@@ -1,11 +1,13 @@
 /*
- * Car.scala
- * package cars
- * Author: Luca Ghislotti
- *
- * Classe astratta che rappresenta il tipo Car ereditato
- * dalle sottoclassi Ecar, FFcar, Hcar
- *
+ ============================================================================
+ Name        : Car.scala
+ Package     : package cars
+ Author      : Luca Ghislotti
+ Version     : 1.0
+ Copyright   : MIT License
+ Description : Classe astratta che rappresenta il tipo Car ereditato
+               dalle sottoclassi Ecar, FFcar, Hcar
+ ============================================================================
  */
 
 package cars

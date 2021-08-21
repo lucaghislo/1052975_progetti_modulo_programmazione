@@ -1,12 +1,14 @@
 /*
- * VINbuilder.scala
- * package cars
- * Author: Luca Ghislotti
- *
- * Classe che permette la creazione del numero di telaio delle
- * automobili. Per mantenere il prefisso statico, si definisce un
- * companion object con lo stesso nome della classe compagna
- *
+ ============================================================================
+ Name        : VINbuilder.scala
+ Package     : package cars
+ Author      : Luca Ghislotti
+ Version     : 1.0
+ Copyright   : MIT License
+ Description : Classe che permette la creazione del numero di telaio delle
+               automobili. Per mantenere il prefisso statico, si definisce un
+               companion object con lo stesso nome della classe compagna
+ ============================================================================
  */
 
 package cars

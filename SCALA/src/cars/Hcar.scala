@@ -1,11 +1,13 @@
 /*
- * Hcar.scala
- * package cars
- * Author: Luca Ghislotti
- *
- * Classe Hcar ottenuta come sottoclasse dalla superclasse
- * Car, definita come interfaccia (Scala trait)
- *
+ ============================================================================
+ Name        : Hcar.scala
+ Package     : package cars
+ Author      : Luca Ghislotti
+ Version     : 1.0
+ Copyright   : MIT License
+ Description : Classe Hcar ottenuta come sottoclasse dalla superclasse
+               Car, definita come interfaccia (Scala trait)
+ ============================================================================
  */
 
 package cars

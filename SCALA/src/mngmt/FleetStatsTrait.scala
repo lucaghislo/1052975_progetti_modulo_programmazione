@@ -1,11 +1,13 @@
 /*
- * FleetStatsTrait.scala
- * package mngmt
- * Author: Luca Ghislotti
- *
- * Interfaccia (Scala Trait) che contiene tutti i metodi
- * implementati dall'oggetto Singleton FleetStats
- *
+ ============================================================================
+ Name        : FleetStatsTrait.scala
+ Package     : package mngmt
+ Author      : Luca Ghislotti
+ Version     : 1.0
+ Copyright   : MIT License
+ Description : Interfaccia (Scala Trait) che contiene tutti i metodi
+               implementati dall'oggetto Singleton FleetStats
+ ============================================================================
  */
 
 package mngmt
