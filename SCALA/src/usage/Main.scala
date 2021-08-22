@@ -1,6 +1,6 @@
 /*
  ============================================================================
- Name        : Main
+ Name        : Main.scala
  Package     : package usage
  Author      : Luca Ghislotti
  Version     : 1.0
