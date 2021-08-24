@@ -87,7 +87,7 @@ protected:
 	 * di auto immatricolabili (su 10 cifre del numero di telaio) viene sollevata
 	 * un'eccezione
 	 */
-	char* buildVIN(int prefix);
+	string buildVIN(const int &prefix);
 
 	/*
 	 * Metodo per incrementare il prefisso automaticamente alla creazione di una

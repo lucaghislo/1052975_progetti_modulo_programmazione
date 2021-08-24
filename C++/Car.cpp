@@ -60,14 +60,12 @@ Car::Car(char *targaInput, int pesoInput, int potenzaInput) :
 	strcpy(targa, targaInput); // targa definita da parametro
 
 	try {
-		Car::buildVIN(prefix);
+		// Allocazione area di memoria su heap per salvataggio numero di telaio
+		numTelaio = new string();
+		*numTelaio = buildVIN(prefix); // VIN generico pre-costruzione
 	} catch (int x) {
 		cout << "Errore creazione auto: threshold superata" << endl;
 	}
-
-	// Allocazione area di memoria su heap per salvataggio numero di telaio
-	numTelaio = new string();
-	*numTelaio = buildVIN(prefix); // VIN generico pre-costruzione
 
 	/*
 	 * Incremento del prefisso dopo la creazione dell'auto
@@ -89,19 +87,17 @@ void Car::increasePrefix() {
 	Car::prefix++;
 }
 
-char* Car::buildVIN(int prefix) {
+string Car::buildVIN(const int &prefix) {
 	string str_prefix = to_string(prefix);
 	int length = str_prefix.length();
-	char *VIN = (char*) malloc(sizeof(char) * 10);
-	strcpy(VIN, str_prefix.data());
+	string VIN = str_prefix;
 
 	if (length > 10) {
-		delete VIN;
 		throw 403; // error code nel caso venga superato il limite di immatricolazioni
 	} else {
 		// costruzione VIN generico con prefisso
 		for (int i = 0; i < 10 - length; i++) {
-			strcat(VIN, "X");
+			VIN += "X";
 		}
 	}
 
@@ -148,4 +144,3 @@ Car::~Car() {
 	delete numTelaio; // deallocazione del numero di telaio da heap
 	cout << "cleared all cars" << endl;
 }
-
