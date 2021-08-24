@@ -35,7 +35,7 @@ public:
 	Car(const Car &newCar);
 
 	char* getTarga(); // metodo per ottenere targa auto
-	char* getVIN(); // metodo per ottenere numero di telaio auto
+	string getVIN(); // metodo per ottenere numero di telaio auto
 	short getPotenza(); // metodo per ottenere potenza auto
 	short getPeso(); // metodo per ottenere peso auto
 
@@ -74,7 +74,7 @@ private:
 	 * variabile statica, comune a tutte le istanze
 	 */
 	char *targa; // targa dell'automobile
-	char *numTelaio; // numero di telaio dell'automobile
+	string *numTelaio; // numero di telaio dell'automobile
 	unsigned short potenza; // potenza dell'automobile (kW)
 	unsigned short peso; // peso dell'auto (Kg)
 	static unsigned const short minPotenza = 30; // costante: potenza minima automobile

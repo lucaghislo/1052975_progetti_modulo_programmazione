@@ -36,8 +36,8 @@ Car::Car() {
 	}
 
 	// Allocazione area di memoria su heap per salvataggio numero di telaio
-	numTelaio = (char*) malloc(sizeof(char) * 10);
-	strcpy(numTelaio, buildVIN(prefix)); // VIN generico pre-costruzione
+	numTelaio = new string();
+	*numTelaio = buildVIN(prefix); // VIN generico pre-costruzione
 
 	potenza = minPotenza; // auto pre-immatricolata ha potenza di default
 
@@ -66,8 +66,8 @@ Car::Car(char *targaInput, int pesoInput, int potenzaInput) :
 	}
 
 	// Allocazione area di memoria su heap per salvataggio numero di telaio
-	numTelaio = (char*) malloc(sizeof(char) * 10);
-	strcpy(numTelaio, buildVIN(prefix)); // VIN generico pre-costruzione
+	numTelaio = new string();
+	*numTelaio = buildVIN(prefix); // VIN generico pre-costruzione
 
 	/*
 	 * Incremento del prefisso dopo la creazione dell'auto
@@ -80,7 +80,7 @@ Car::Car(char *targaInput, int pesoInput, int potenzaInput) :
  */
 Car::Car(const Car &newCar) {
 	strcpy(targa, newCar.targa);
-	strcpy(numTelaio, newCar.numTelaio);
+	numTelaio = newCar.numTelaio;
 	Car::potenza = newCar.potenza;
 	Car::peso = newCar.peso;
 }
@@ -112,8 +112,8 @@ char* Car::getTarga() {
 	return Car::targa;
 }
 
-char* Car::getVIN() {
-	return Car::numTelaio;
+string Car::getVIN() {
+	return *numTelaio;
 }
 
 short Car::getPotenza() {
@@ -144,7 +144,7 @@ void Car::showInfo() {
  *
  */
 Car::~Car() {
-	delete targa; // deallocazione della targa da heap
+	free(targa); // deallocazione della targa da heap
 	delete numTelaio; // deallocazione del numero di telaio da heap
 	cout << "cleared all cars" << endl;
 }
