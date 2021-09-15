@@ -1,0 +1,13 @@
+ISTRUZIONI PER CREAZIONE ESEGUIBILE
+
+copy .exe from QT Release into new folder
+
+Open Qt 6.1.2 (MinGW 8.1.0 64-bit)
+
+cd that new folder
+
+windeployqt Info3_progettoCPP.exe
+
+Open Inno Setup Compiler
+
+Follow instructions (yes -> no)
