@@ -5,12 +5,15 @@
  Version     : 1.0
  Copyright   : MIT License
  Description : Implementazione della class Garage: sfrutto il concetto di
-	           Smart Pointers nella forma unique_ptr<>
+ Smart Pointers nella forma unique_ptr<>
  ============================================================================
  */
 
 #include <iostream>
 using namespace std;
+#include <fstream>
+#include <chrono>
+#include <ctime>
 #include <cstring>
 #include <memory>
 #include "Garage.h"
@@ -132,4 +135,17 @@ void Garage::stampaFlotta() {
 	for (auto const &i : flotta) {
 		i.get()->showInfo();
 	}
+}
+
+void Garage::printToFile() {
+	ofstream out_file;
+	out_file.open("logs/fleet_log.txt", ios_base::app);
+	auto timestamp = chrono::system_clock::now();
+	time_t time = std::chrono::system_clock::to_time_t(timestamp);
+	out_file << ctime(&time);
+	for (auto const &i : flotta) {
+		out_file << i.get()->getTarga() << ", " << i.get()->getVIN() << endl;
+	}
+	out_file << endl;
+	out_file.close();
 }

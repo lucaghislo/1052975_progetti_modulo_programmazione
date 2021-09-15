@@ -59,6 +59,8 @@ public:
 		return flotta.size();
 	}
 
+	void printToFile();
+
 private:
 	// Costruttore vuoto della classe Garage
 	Garage();
