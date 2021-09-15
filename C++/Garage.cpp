@@ -147,6 +147,7 @@ void Garage::printToFile() {
 	for (auto const &i : flotta) {
 		out_file << i.get()->getTarga() << endl;
 	}
+
 	out_file << endl;
 	out_file.close();
 }
