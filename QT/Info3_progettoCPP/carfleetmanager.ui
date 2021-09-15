@@ -319,7 +319,7 @@
   <widget class="QPushButton" name="pulsanteSubmit">
    <property name="geometry">
     <rect>
-     <x>70</x>
+     <x>80</x>
      <y>500</y>
      <width>201</width>
      <height>41</height>
