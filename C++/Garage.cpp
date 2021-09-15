@@ -142,9 +142,10 @@ void Garage::printToFile() {
 	out_file.open("logs/fleet_log.txt", ios_base::app);
 	auto timestamp = chrono::system_clock::now();
 	time_t time = std::chrono::system_clock::to_time_t(timestamp);
+
 	out_file << ctime(&time);
 	for (auto const &i : flotta) {
-		out_file << i.get()->getTarga() << ", " << i.get()->getVIN() << endl;
+		out_file << i.get()->getTarga() << endl;
 	}
 	out_file << endl;
 	out_file.close();

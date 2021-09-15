@@ -59,6 +59,10 @@ public:
 		return flotta.size();
 	}
 
+	/*
+	 * Metodo per la stampa su file del log con l'elenco delle targhe inserite
+	 * in una certa data (data ed ora)
+	 */
 	void printToFile();
 
 private:
