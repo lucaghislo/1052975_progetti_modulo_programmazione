@@ -12,7 +12,7 @@
 #define GARAGE_H_
 #include <vector>
 #include <memory>
-#include "cars_headers/Car.h"
+#include "Car.h"
 
 /*
  * Implemento la classe Garage sfruttando il design pattern
@@ -58,8 +58,6 @@ public:
 	inline short countAuto() {
 		return flotta.size();
 	}
-
-	void printToFile();
 
 private:
 	// Costruttore vuoto della classe Garage

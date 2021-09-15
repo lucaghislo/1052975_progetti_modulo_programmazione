@@ -11,11 +11,11 @@
 #include <iostream>
 using namespace std;
 #include <vector>
-#include "cars_headers/Ecar.h"
+#include "Ecar.h"
 
 Ecar::Ecar(vector<int> standardsInput) :
 		Car() {
-	capacitaBatteria = 10;
+	capacitaBatteria = 0;
 	standards = standardsInput;
 }
 

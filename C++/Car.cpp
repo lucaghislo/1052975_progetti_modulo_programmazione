@@ -12,7 +12,7 @@
 using namespace std;
 #include <cstring>
 #include <string>
-#include "cars_headers/Car.h"
+#include "Car.h"
 
 /*
  * Variabile statica della classe Car, comune a tutte le istanze della classe

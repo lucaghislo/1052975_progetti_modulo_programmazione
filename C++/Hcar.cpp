@@ -10,9 +10,9 @@
 
 #include <iostream>
 using namespace std;
-#include "cars_headers/FFcar.h"
-#include "cars_headers/Ecar.h"
-#include "cars_headers/Hcar.h"
+#include "FFcar.h"
+#include "Ecar.h"
+#include "Hcar.h"
 
 /*
  * Costruttore della classe derivata che sfrutta i costruttori delle sue
