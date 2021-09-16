@@ -60,11 +60,11 @@ object UserBookAnalyzer {
    * frequentemente nel file di testo
    */
   def mostRecurringWords(words: RDD[String], sc: SparkContext) = {
-    val wc = words.flatMap(l => l.split(" ")).map(word => (word, 1)).reduceByKey(_ + _)
-    val wc_swap = wc.map(_.swap)
+    val wc = words.flatMap(l => l.split(" ")).map(word => (word, 1)).reduceByKey(_ + _) // reduce sulla key
+    val wc_swap = wc.map(_.swap) // necessario swappare per effettuare ordinamento
     val hifreq_words = wc_swap.sortByKey(false, 1)
-    val top10rdd = sc.parallelize(hifreq_words.take(10))
-    top10rdd.collect()
+    val top10rdd = sc.parallelize(hifreq_words.take(10)) // costruzione RDD prime 10 parole con take()
+    top10rdd.collect() // riottenimento elementi da RDD tramite collect()
   }
 
   /*
@@ -74,7 +74,7 @@ object UserBookAnalyzer {
     println("\n*** BOOK ANALYSIS ***\n\nURL: " + url + "\n\n** 10 Most Recurring Words **\n")
     var i = 1;
     while (i < array.size) {
-      println("\"" + array(i)._1 + "\"\trecurring " + array(i)._2 + " times")
+      println("\"" + array(i)._2 + "\"\trecurring " + array(i)._1 + " times")
       i += 1
     }
   }
