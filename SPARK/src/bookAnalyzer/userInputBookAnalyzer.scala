@@ -74,7 +74,7 @@ object UserBookAnalyzer {
     println("\n*** BOOK ANALYSIS ***\n\nURL: " + url + "\n\n** 10 Most Recurring Words **\n")
     var i = 1;
     while (i < array.size) {
-      println("\"" + array(i)._2 + "\"\trecurring " + array(i)._1 + " times")
+      println("\"" + array(i)._1 + "\"\trecurring " + array(i)._2 + " times")
       i += 1
     }
   }
