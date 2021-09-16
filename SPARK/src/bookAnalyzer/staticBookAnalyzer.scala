@@ -55,6 +55,11 @@ object bookAnalyzer {
     words.map((x: String) => x.length()).fold(0)(((sum: Int, x: Int) => sum + x))
   }
 
+  /*
+   * Funzione che ha lo scopo di ritornare la parola che compare più 
+   * frequentemente nel file di testo. Vengono sfruttati i paradigmi di map
+   * e reduce
+   */
   def mostRecurringWord(words: RDD[String], sc: SparkContext) = {
     val wc = words.flatMap(l => l.split(" ")).map(word => (word, 1)).reduceByKey(_ + _)
     val wc_swap = wc.map(_.swap)

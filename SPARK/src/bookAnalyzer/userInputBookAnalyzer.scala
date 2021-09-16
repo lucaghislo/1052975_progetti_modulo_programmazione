@@ -55,6 +55,10 @@ object UserBookAnalyzer {
     words.map((x: String) => x.length()).fold(0)(((sum: Int, x: Int) => sum + x))
   }
 
+  /*
+   * La funzione ha lo scopo di fornire le 10 parole che ricorrono più
+   * frequentemente nel file di testo
+   */
   def mostRecurringWords(words: RDD[String], sc: SparkContext) = {
     val wc = words.flatMap(l => l.split(" ")).map(word => (word, 1)).reduceByKey(_ + _)
     val wc_swap = wc.map(_.swap)
@@ -63,6 +67,9 @@ object UserBookAnalyzer {
     top10rdd.collect()
   }
 
+  /*
+   * Funzione che stampa le 10 parole da RDD fornito coem parametro
+   */
   def printWords(array: Array[(Int, String)], url: String) = {
     println("\n*** BOOK ANALYSIS ***\n\nURL: " + url + "\n\n** 10 Most Recurring Words **\n")
     var i = 1;
@@ -74,6 +81,7 @@ object UserBookAnalyzer {
 
   def main(args: Array[String]) {
 
+    // viene chiesto all'utente di inserire l'url del file .txt da analizzare
     print("Please input .txt URL: ")
     val url = readLine()
 
