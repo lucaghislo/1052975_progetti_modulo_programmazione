@@ -15,7 +15,7 @@ Il progetto SCALA ha lo scopo di implementare le medesime funzionalità del prog
 Il progetto SPARK ha lo scopo di illustrare un'esempio di implementazione dei paradigmi map/reduce in ambiente Spark. L'obiettivo dell'esempio è quello di fornire le 10 parole che compaiono più frequentemente in un file di testo (presumibilmente un libro, un'opera letteraria) di cui viene fornito l'url.
 
 ###### Progetto ASMETA
-Il progetto ASMETA ha lo scopo di effettuare l'implementazione di un semaforo sottoforma di automa a stati.
+Il progetto ASMETA ha lo scopo di effettuare l'implementazione di un semaforo nella forma di un automa a stati.
 
 ## Documentazione
 La documentazione è disponibile al seguente link Google Drive:<br>
