@@ -11,18 +11,25 @@
  */
 
 package cars
+import visitor._
 
 /*
  * Classe astratta con campi privati che estende la
  * classe VINbuilder contenente i metodi per la creazione del
- * numero di telaio (uso del campo statico prefix)
+ * numero di telaio (uso del campo statico prefix).
+ * 
+ * L'idea Ã¨ quella di considerare un'auto come una sottoclasse del generatore
+ * di numeri di telaio (una sorta di fabbrica).
+ * 
+ * La classe astratta Car implementa il trait VisitableItemIF allo scopo
+ * di sfruttare il design pattern visitor costruito con gli Scala Generics
  */
-abstract class Car(private var targa: String, private var potenza: Int, private var peso: Int) extends VINbuilder {
+abstract class Car(private var targa: String, private var potenza: Int, private var peso: Int) extends VINbuilder with VisitableItemIF {
 
   /*
    * Expression oriented programming
    *
-   * Check di integrità della targa: se eccede il numero di caratteri,
+   * Check di integritï¿½ della targa: se eccede il numero di caratteri,
    * viene sollevata un'eccezione intercettata al momento della costruzione
    */
   targa = if (targa.length() <= 9) targa else throw new Exception("Errore")
@@ -56,7 +63,7 @@ abstract class Car(private var targa: String, private var potenza: Int, private 
 
   /*
    * Metodi getter per Car: da notare la sintassi
-   * molto più snella rispetto a Java
+   * molto piï¿½ snella rispetto a Java
    */
   def getTarga = targa // esempio di type inference
   def getNumTelaio: String = numTelaio // tipo di ritorno esplicitato
@@ -66,7 +73,7 @@ abstract class Car(private var targa: String, private var potenza: Int, private 
 
   /*
    * Metodi setter per Car: da notare la sintassi
-   * molto più snella rispetto a Java
+   * molto piï¿½ snella rispetto a Java
    */
   def setTarga(newTarga: String) = targa = newTarga // esempio di call-by-value
   def setNumTelaio(newTelaio: => String) = numTelaio = newTelaio // esempio di call-by-name
@@ -83,5 +90,8 @@ abstract class Car(private var targa: String, private var potenza: Int, private 
     println("      VIN:  " + getNumTelaio)
     println("  Potenza:  " + getPotenza + " kW")
     println("     Peso:  " + getPeso + " kg")
+    println("Autonomia:  " + this.accept(new Information()) + " Km")
   }
+  
+  def accept[T](visitor: ItemVisitor[T]): T;
 }

@@ -12,6 +12,7 @@
 
 package cars
 import scala.collection.mutable._
+import visitor._
 
 /*
  * Definizione sottoclasse di Car
@@ -93,4 +94,6 @@ class Ecar(targa: String, potenza: Int, peso: Int, var capacitaBatteria: Int = 4
     this.printResumee(getArrayBufferContent)
     println("")
   }
+
+  def accept[T](visitor: ItemVisitor[T]): T = visitor.visit(this);
 }

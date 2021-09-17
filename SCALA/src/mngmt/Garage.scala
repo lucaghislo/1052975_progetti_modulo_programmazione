@@ -24,7 +24,7 @@ object Garage {
 
   /*
    * Flotta di auto come Collezione mutable ListBuffer
-   * ListBuffer è realizzata internamente come una lista concatenata
+   * ListBuffer ï¿½ realizzata internamente come una lista concatenata
    */
   val flotta = ListBuffer.empty[Car]
 
@@ -46,7 +46,7 @@ object Garage {
     carType match {
       // FFcar
       case 0 => {
-        print("Capacità serbatoio: ")
+        print("Capacita serbatoio: ")
         val fuelCap = scala.io.StdIn.readInt()
         print("Consumo urbano: ")
         val urbano = scala.io.StdIn.readDouble()
@@ -69,7 +69,7 @@ object Garage {
 
       // Hcar
       case 2 => {
-        print("Capacità serbatoio: ")
+        print("Capacita serbatoio: ")
         val fuelCap: Int = scala.io.StdIn.readInt()
         print("Consumo urbano: ")
         val urbano: Double = scala.io.StdIn.readDouble()

@@ -12,6 +12,7 @@
 
 package cars
 import mngmt._
+import visitor._
 
 /*
  * Sottoclasse costruita sfruttando il costruttore della superclasse Car,
@@ -64,6 +65,7 @@ class FFcar(targa: String, potenza: Int = 100, peso: Int = 1500, var capacitaSer
     println("Cap. Ser.:  " + getCapSerb + " L")
     printResumee
     println("\nCon. Med.:  " + FleetStats.consumoMedio(this) + " L/100km")
-    println("")
   }
+  
+  def accept[T](visitor: ItemVisitor[T]): T = visitor.visit(this);
 }

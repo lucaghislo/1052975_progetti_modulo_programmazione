@@ -12,9 +12,10 @@
 
 package cars
 import scala.collection.mutable._
+import visitor._
 
 /*
- * In Scala, come in Java, non è permessa ereditarietà multipla.
+ * In Scala, come in Java, non ï¿½ permessa ereditarietï¿½ multipla.
  * Ho peranto esteso la classe Ecar e, non potendo estendere anche la
  * classe FFcar (come invece fatto in C++) ho aggiunto i campi mancanti
  */
@@ -55,6 +56,5 @@ class Hcar(targa: String, potenza: Int = 110, peso: Int = 1500, capBatteria: Int
     super.showInfo() // utilizzo del costrutto super per richiamare il metodo della superclasse
     println("Cap. Ser.:  " + getCapSerb + " L")
     printResumee
-    println("")
   }
 }
