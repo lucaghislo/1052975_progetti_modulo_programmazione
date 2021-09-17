@@ -95,5 +95,6 @@ class Ecar(targa: String, potenza: Int, peso: Int, var capacitaBatteria: Int = 4
     println("")
   }
 
+  // metodo di accettazione del visitor
   def accept[T](visitor: ItemVisitor[T]): T = visitor.visit(this);
 }

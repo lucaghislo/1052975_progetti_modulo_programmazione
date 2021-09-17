@@ -17,10 +17,10 @@ import visitor._
  * Classe astratta con campi privati che estende la
  * classe VINbuilder contenente i metodi per la creazione del
  * numero di telaio (uso del campo statico prefix).
- * 
+ *
  * L'idea è quella di considerare un'auto come una sottoclasse del generatore
  * di numeri di telaio (una sorta di fabbrica).
- * 
+ *
  * La classe astratta Car implementa il trait VisitableItemIF allo scopo
  * di sfruttare il design pattern visitor costruito con gli Scala Generics
  */
@@ -36,8 +36,8 @@ abstract class Car(private var targa: String, private var potenza: Int, private 
 
   // Numero di telaio definito internamente con valore di default
   private var numTelaio: String = "XXXXXXXXXX"
-  
-   /*
+
+  /*
    * Blocco try-catch per intercettare eccezione
    * sollevata durante la creazione del VIN
    */
@@ -92,6 +92,7 @@ abstract class Car(private var targa: String, private var potenza: Int, private 
     println("     Peso:  " + getPeso + " kg")
     println("Autonomia:  " + this.accept(new Information()) + " Km")
   }
-  
+
+  // metodo di accettazione del visitor (implementato nelle sottoclassi)
   def accept[T](visitor: ItemVisitor[T]): T;
 }

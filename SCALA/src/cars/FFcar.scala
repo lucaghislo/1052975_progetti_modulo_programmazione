@@ -67,5 +67,6 @@ class FFcar(targa: String, potenza: Int = 100, peso: Int = 1500, var capacitaSer
     println("\nCon. Med.:  " + FleetStats.consumoMedio(this) + " L/100km")
   }
   
+  // metodo di accettazione del visitor
   def accept[T](visitor: ItemVisitor[T]): T = visitor.visit(this);
 }
