@@ -17,6 +17,9 @@ Il progetto SPARK ha lo scopo di illustrare un'esempio di implementazione dei pa
 ###### Progetto ASMETA
 Il progetto ASMETA ha lo scopo di effettuare l'implementazione di un semaforo nella forma di un automa a stati.
 
+###### Progetto PYTHON
+Il progetto Python ha lo scopo di illustrare un semplice esempio di costruzione di una GUI sfruttando la libreria tkinter. L'obettivo dell'applicativo è quello di realizzare una calcolatrice ed un convertitore di basi numeriche (decimale, binario, ottale, esadecimale).
+
 ## Documentazione
 La documentazione è disponibile al seguente link Google Drive:<br>
 [https://drive.google.com/file/d/1_wPotnfQX7saXyX4umg2k4tRnzB-QBjl/view?usp=sharing](https://drive.google.com/file/d/1_wPotnfQX7saXyX4umg2k4tRnzB-QBjl/view?usp=sharing)
