@@ -8,6 +8,7 @@ from tkinter import messagebox
  
 # variabile globale che rappresenta l'espressione numerica
 expression = ""
+equation = ""
  
 # funzione per l'update dell'espressione sulla base della pressione
 # dei pulsanti (sia numerici che operazionali)
@@ -29,6 +30,12 @@ def equalpress():
     try:
         # riferimento alle variabili globali
         global expression
+
+        # calcolo continuo: nel caso venga specificato come primo carattere della sequenza un operatore,
+        # si considera come primo membro dell'operazione il risultato precedentemente ottenuto
+        if (expression[0] == '*' or expression[0] == '/' or expression[0] == '+' or expression[0] == '-') and operation_field.get() != "":
+            expression = operation_field.get() + expression
+            equation.set(expression)
         
         # valutazione dell'espressione (calcolo dell'operazione)
         total = str(eval(expression))
@@ -46,7 +53,6 @@ def equalpress():
 # funzione per la rimozione del contenuto del box espressione e risultato
 def clear():
     global expression
-
     expression = ""
     equation.set("")
     operation.set("")
@@ -139,10 +145,6 @@ def convert():
             conv_output.set(bin(int(conv_input.get(), 16))[2:])
         else:
             conv_output.set(conv_input.get())
-
-def combo_change():
-    combo_from.selection_clear()
-    combo_to.selection_clear()
  
 # main
 if __name__ == "__main__":
@@ -262,7 +264,6 @@ if __name__ == "__main__":
                                     "Esadecimale"], state="readonly")
     combo_from.grid(row=4, column=6, columnspan=3)
     combo_from.current(0)
-    combo_from.bind('<<ComboboxSelected>>', combo_change)
 
     combo_to = Combobox(gui, font = myfont, width=30, values=[
                                     "Decimale", 
@@ -271,7 +272,6 @@ if __name__ == "__main__":
                                     "Esadecimale"], state="readonly")
     combo_to.grid(row=5, column=6, columnspan=3)
     combo_to.current(1)
-    combo_to.bind("<<ComboboxSelected>>", combo_change)
 
     output_conv = Entry(gui, textvariable=conv_output, font = myfont, state="readonly")
     output_conv.grid(columnspan=3, ipadx=80, ipady=5, row = 6, padx=10, pady=10, column=5)
