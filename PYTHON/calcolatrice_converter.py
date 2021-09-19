@@ -3,6 +3,8 @@
 # import della libreria per design GUI
 from tkinter import *
 from tkinter.font import BOLD
+from tkinter.ttk import Combobox
+from tkinter import messagebox
  
 # variabile globale che rappresenta l'espressione numerica
 expression = ""
@@ -48,7 +50,99 @@ def clear():
     expression = ""
     equation.set("")
     operation.set("")
- 
+
+def erase_input_conv():
+    conv_input.set("")
+    combo_to.current(1)
+    combo_from.current(0)
+    conv_output.set("")
+
+def check_input():
+    for c in input_conv.get():
+        if(c.isalpha()):
+            messagebox.showerror(title = "Errore", message = "Errore formato input")
+            erase_input_conv()
+            break
+
+def check_input_octal():
+    for c in input_conv.get():
+        if(int(c)<0 or int(c)>7):
+            messagebox.showerror(title = "Errore", message = "Errore formato input ottale")
+            erase_input_conv()
+            break
+
+def check_input_binary():
+    for c in input_conv.get():
+        if(int(c)<0 or int(c)>1):
+            messagebox.showerror(title = "Errore", message = "Errore formato input binario")
+            erase_input_conv()
+            break
+
+def check_input_hex():
+    for c in input_conv.get():
+        if(not(c.isalpha() and (ord(c)>=97 and ord(c)<=102) or (ord(c)>=65 and ord(c)<=70)) and c.isalpha()):
+            messagebox.showerror(title = "Errore", message = "Errore formato input esadecimale")
+            erase_input_conv()
+            break
+
+def convert():
+    base = 16
+    if(combo_to.get() == "Decimale"):
+        base = 10
+    elif(combo_to.get() == "Binario"):
+        base = 2
+    elif(combo_to.get() == "Ottale"):
+        base = 8
+
+    if(combo_from.get() == "Decimale"):
+        check_input()
+        if(combo_to.get() == "Binario"):
+            conv_output.set(bin(int(conv_input.get()))[2:])
+        elif(combo_to.get() == "Ottale"):
+             conv_output.set(oct(int(conv_input.get()))[2:])
+        elif(combo_to.get() == "Esadecimale"):
+            conv_output.set(hex(int(conv_input.get()))[2:])
+        else:
+            conv_output.set(conv_input.get())
+
+    if(combo_from.get() == "Binario"):
+        check_input()
+        check_input_binary()
+        if(combo_to.get() == "Decimale"):
+            conv_output.set(int(conv_input.get(), 2))
+        elif(combo_to.get() == "Ottale"):
+             conv_output.set(oct(int(conv_input.get(), 2))[2:])
+        elif(combo_to.get() == "Esadecimale"):
+            conv_output.set(hex(int(conv_input.get(), 2))[2:])
+        else:
+            conv_output.set(conv_input.get())
+
+    if(combo_from.get() == "Ottale"):
+        check_input()
+        check_input_octal()
+        if(combo_to.get() == "Decimale"):
+            conv_output.set(int(conv_input.get(), 8))
+        elif(combo_to.get() == "Binario"):
+             conv_output.set(bin(int(conv_input.get(), 8))[2:])
+        elif(combo_to.get() == "Esadecimale"):
+            conv_output.set(hex(int(conv_input.get(), 8))[2:])
+        else:
+            conv_output.set(conv_input.get())
+
+    if(combo_from.get() == "Esadecimale"):
+        check_input_hex()
+        if(combo_to.get() == "Decimale"):
+            conv_output.set(int(conv_input.get(), 16))
+        elif(combo_to.get() == "Ottale"):
+             conv_output.set(oct(int(conv_input.get(), 16))[2:])
+        elif(combo_to.get() == "Binario"):
+            conv_output.set(bin(int(conv_input.get(), 16))[2:])
+        else:
+            conv_output.set(conv_input.get())
+
+def combo_change():
+    combo_from.selection_clear()
+    combo_to.selection_clear()
  
 # main
 if __name__ == "__main__":
@@ -59,16 +153,18 @@ if __name__ == "__main__":
     gui.configure(background="gray33")
  
     # setting del titolo della finestra
-    gui.title("Calcolatrice")
+    gui.title("Calcolatrice e convertitore di base")
  
     # configurazione delle dimensioni
-    gui.geometry("445x450")
+    gui.geometry("1045x450") # larghezza calcolatrice 445
     gui.resizable(False, False) # dimensioni fissate
  
     # creazione di operazione ed equazione come istanze della 
     # classe StringVar()
     equation = StringVar()
     operation = StringVar()
+    conv_input = StringVar()
+    conv_output = StringVar()
  
     # definizione del font
     myfont = ('Consolas', 18, BOLD)
@@ -83,12 +179,12 @@ if __name__ == "__main__":
     out_y_pad = 10 # padding esterno
 
     # creazione delle Entry testuali
-    expression_field = Entry(gui, textvariable = equation, font = myfont)
-    operation_field = Entry(gui, textvariable = operation, font = myfont, width=22)
+    expression_field = Entry(gui, textvariable = equation, font = myfont, state="readonly")
+    operation_field = Entry(gui, textvariable = operation, font = myfont, width=22, state="readonly")
 
     # definizione delle proprietà delle Entry testuali
     expression_field.grid(columnspan=4, ipadx=80, ipady=5, row = 1, padx=10, pady=10)
-    operation_field.grid(columnspan=3, row = 3, padx=10, pady=10)
+    operation_field.grid(columnspan=3, ipadx=15, ipady=5, row = 3, padx=10, pady=10)
  
     # definizione dei pulsanti e delle loro proprietà
     # specifica della posizione del pulsante sulla griglia
@@ -142,6 +238,46 @@ if __name__ == "__main__":
  
     punto = Button(gui, text='.', fg=text_clr, bg="PaleGreen1", command=lambda: press('.'), height = button_height, width = button_width, font = myfont)
     punto.grid(row=7, column=1, ipady = internal_pad, pady = out_y_pad)
+
+    # definizione del convertitore di base
+    label_convertitore = Label(gui, text = "Convertitore di base", font = myfont, width=30, bg = "gray33")
+    label_convertitore.grid(row = 1, column=6, columnspan=2)
+
+    input_conv = Entry(gui, textvariable=conv_input, font = myfont)
+    input_conv.grid(columnspan=3, ipadx=80, ipady=5, row = 3, padx=10, pady=10, column=5)
+
+    cancel = Button(gui, text=' AC ', fg=text_clr, bg="tomato",  command=erase_input_conv, height = button_height, width = button_width, font = myfont, relief="solid", borderwidth=5)
+    cancel.grid(row=3, column=8, ipady = internal_pad, pady = out_y_pad)
+
+    label_from = Label(gui, text = "   From:",  height = button_height, width = 8, font = myfont, bg="gray33")
+    label_from.grid(row=4, column=5, ipady = internal_pad, pady = out_y_pad)
+
+    label_to = Label(gui, text = "     To:",  height = button_height, width = 8, font = myfont, bg="gray33")
+    label_to.grid(row=5, column=5, ipady = internal_pad, pady = out_y_pad)
+
+    combo_from = Combobox(gui, font = myfont, width=30, values=[
+                                    "Decimale", 
+                                    "Binario",
+                                    "Ottale",
+                                    "Esadecimale"], state="readonly")
+    combo_from.grid(row=4, column=6, columnspan=3)
+    combo_from.current(0)
+    combo_from.bind('<<ComboboxSelected>>', combo_change)
+
+    combo_to = Combobox(gui, font = myfont, width=30, values=[
+                                    "Decimale", 
+                                    "Binario",
+                                    "Ottale",
+                                    "Esadecimale"], state="readonly")
+    combo_to.grid(row=5, column=6, columnspan=3)
+    combo_to.current(1)
+    combo_to.bind("<<ComboboxSelected>>", combo_change)
+
+    output_conv = Entry(gui, textvariable=conv_output, font = myfont, state="readonly")
+    output_conv.grid(columnspan=3, ipadx=80, ipady=5, row = 6, padx=10, pady=10, column=5)
+
+    convert = Button(gui, text = ' GO ', fg = text_clr, bg = "light sky blue",  command = convert, height = button_height, width = button_width, font = myfont, relief = "solid", borderwidth = 5)
+    convert.grid(row = 6, column = 8, ipady = internal_pad, pady = out_y_pad)
 
     # avvio interfaccia grafica
     gui.mainloop()
