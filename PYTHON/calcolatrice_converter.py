@@ -57,12 +57,14 @@ def clear():
     equation.set("")
     operation.set("")
 
+# funzione per la rimozione del contenuto dei campi associati al convertitore
 def erase_input_conv():
     conv_input.set("")
     combo_to.current(1)
     combo_from.current(0)
     conv_output.set("")
 
+# funzione di verifica generica dell'input (verifica assenza lettere)
 def check_input():
     for c in input_conv.get():
         if(c.isalpha()):
@@ -70,6 +72,7 @@ def check_input():
             erase_input_conv()
             break
 
+# funzione di veririca dell'input per input ottale
 def check_input_octal():
     for c in input_conv.get():
         if(int(c)<0 or int(c)>7):
@@ -77,6 +80,7 @@ def check_input_octal():
             erase_input_conv()
             break
 
+# funzione di veririca dell'input per input binario
 def check_input_binary():
     for c in input_conv.get():
         if(int(c)<0 or int(c)>1):
@@ -84,6 +88,7 @@ def check_input_binary():
             erase_input_conv()
             break
 
+# funzione di veririca dell'input per input esadecimale
 def check_input_hex():
     for c in input_conv.get():
         if(not(c.isalpha() and (ord(c)>=97 and ord(c)<=102) or (ord(c)>=65 and ord(c)<=70)) and c.isalpha()):
@@ -91,15 +96,9 @@ def check_input_hex():
             erase_input_conv()
             break
 
+# funzione di conversione
 def convert():
-    base = 16
-    if(combo_to.get() == "Decimale"):
-        base = 10
-    elif(combo_to.get() == "Binario"):
-        base = 2
-    elif(combo_to.get() == "Ottale"):
-        base = 8
-
+    #conversione da decimale
     if(combo_from.get() == "Decimale"):
         check_input()
         if(combo_to.get() == "Binario"):
@@ -111,6 +110,7 @@ def convert():
         else:
             conv_output.set(conv_input.get())
 
+    # conversione da binario
     if(combo_from.get() == "Binario"):
         check_input()
         check_input_binary()
@@ -123,6 +123,7 @@ def convert():
         else:
             conv_output.set(conv_input.get())
 
+    #conversione da ottale
     if(combo_from.get() == "Ottale"):
         check_input()
         check_input_octal()
@@ -135,6 +136,7 @@ def convert():
         else:
             conv_output.set(conv_input.get())
 
+    # conversione da esadecimale
     if(combo_from.get() == "Esadecimale"):
         check_input_hex()
         if(combo_to.get() == "Decimale"):
@@ -257,6 +259,7 @@ if __name__ == "__main__":
     label_to = Label(gui, text = "     To:",  height = button_height, width = 8, font = myfont, bg="gray33")
     label_to.grid(row=5, column=5, ipady = internal_pad, pady = out_y_pad)
 
+    #combobox selezione base input
     combo_from = Combobox(gui, font = myfont, width=30, values=[
                                     "Decimale", 
                                     "Binario",
@@ -265,6 +268,7 @@ if __name__ == "__main__":
     combo_from.grid(row=4, column=6, columnspan=3)
     combo_from.current(0)
 
+    #combobox selezione base output
     combo_to = Combobox(gui, font = myfont, width=30, values=[
                                     "Decimale", 
                                     "Binario",
