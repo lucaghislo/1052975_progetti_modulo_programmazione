@@ -7,7 +7,7 @@
  Copyright   : MIT License
  Description : Oggetto Garage funge da singleton (assume il medesimo ruolo
                del Design Pattern "singleton" implementato in C++) come
-               strumento per la gestione della flotta di auto, con i 
+               strumento per la gestione della flotta di auto, con i
                relativi metodi associati
  ============================================================================
  */
@@ -34,8 +34,12 @@ object Garage {
   def newAuto(Iteration: => Int) {
     // Richiesta all'utente
     if (Iteration == 0) print("Targa: ") else print("\nTarga: ")
-      
+
     val targa = scala.io.StdIn.readLine()
+
+    if (targa.length() > 9)
+      throw new Exception("Errore formato targa")
+
     print("Potenza: ")
     val potenza = scala.io.StdIn.readInt()
     print("Peso: ")
@@ -99,7 +103,7 @@ object Garage {
   def stampaFlotta {
     println("***AUTO NELLA FLOTTA***")
     flotta.foreach {
-      case(car) => car.showInfo()
+      case (car) => car.showInfo()
     }
   }
 }
