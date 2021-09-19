@@ -92,56 +92,56 @@ if __name__ == "__main__":
  
     # definizione dei pulsanti e delle loro proprietà
     # specifica della posizione del pulsante sulla griglia
-    button7 = Button(gui, text=' 7 ', fg=text_clr, bg=bg_number, command=lambda: press(7), height = button_height, width = button_width, font = myfont)
-    button7.grid(row=4, column=0, ipady = internal_pad, pady = out_y_pad)
+    button_7 = Button(gui, text=' 7 ', fg=text_clr, bg=bg_number, command=lambda: press(7), height = button_height, width = button_width, font = myfont)
+    button_7.grid(row=4, column=0, ipady = internal_pad, pady = out_y_pad)
  
-    button8 = Button(gui, text=' 8 ', fg=text_clr, bg=bg_number, command=lambda: press(8), height = button_height, width = button_width, font = myfont)
-    button8.grid(row=4, column=1, ipady = internal_pad, pady = out_y_pad)
+    button_8 = Button(gui, text=' 8 ', fg=text_clr, bg=bg_number, command=lambda: press(8), height = button_height, width = button_width, font = myfont)
+    button_8.grid(row=4, column=1, ipady = internal_pad, pady = out_y_pad)
  
-    button9 = Button(gui, text=' 9 ', fg=text_clr, bg=bg_number, command=lambda: press(9), height = button_height, width = button_width, font = myfont)
-    button9.grid(row=4, column=2, ipady = internal_pad, pady = out_y_pad)
+    button_9 = Button(gui, text=' 9 ', fg=text_clr, bg=bg_number, command=lambda: press(9), height = button_height, width = button_width, font = myfont)
+    button_9.grid(row=4, column=2, ipady = internal_pad, pady = out_y_pad)
  
-    button4 = Button(gui, text=' 4 ', fg='black', bg=bg_number, command=lambda: press(4), height = button_height, width = button_width, font = myfont)
-    button4.grid(row=5, column=0, ipady = internal_pad, pady = out_y_pad)
+    button_4 = Button(gui, text=' 4 ', fg='black', bg=bg_number, command=lambda: press(4), height = button_height, width = button_width, font = myfont)
+    button_4.grid(row=5, column=0, ipady = internal_pad, pady = out_y_pad)
  
-    button5 = Button(gui, text=' 5 ', fg='black', bg=bg_number, command=lambda: press(5), height = button_height, width = button_width, font = myfont)
-    button5.grid(row=5, column=1, ipady = internal_pad, pady = out_y_pad)
+    button_5 = Button(gui, text=' 5 ', fg='black', bg=bg_number, command=lambda: press(5), height = button_height, width = button_width, font = myfont)
+    button_5.grid(row=5, column=1, ipady = internal_pad, pady = out_y_pad)
  
-    button6 = Button(gui, text=' 6 ', fg='black', bg=bg_number, command=lambda: press(6), height = button_height, width = button_width, font = myfont)
-    button6.grid(row=5, column=2, ipady = internal_pad, pady = out_y_pad)
+    button_6 = Button(gui, text=' 6 ', fg='black', bg=bg_number, command=lambda: press(6), height = button_height, width = button_width, font = myfont)
+    button_6.grid(row=5, column=2, ipady = internal_pad, pady = out_y_pad)
  
-    button1 = Button(gui, text=' 1 ', fg='black', bg=bg_number, command=lambda: press(1), height = button_height, width = button_width, font = myfont)
-    button1.grid(row=6, column=0, ipady = internal_pad, pady = out_y_pad)
+    button_1 = Button(gui, text=' 1 ', fg='black', bg=bg_number, command=lambda: press(1), height = button_height, width = button_width, font = myfont)
+    button_1.grid(row=6, column=0, ipady = internal_pad, pady = out_y_pad)
  
-    button2 = Button(gui, text=' 2 ', fg='black', bg=bg_number,  command=lambda: press(2), height = button_height, width = button_width, font = myfont)
-    button2.grid(row=6, column=1, ipady = internal_pad, pady = out_y_pad)
+    button_2 = Button(gui, text=' 2 ', fg='black', bg=bg_number,  command=lambda: press(2), height = button_height, width = button_width, font = myfont)
+    button_2.grid(row=6, column=1, ipady = internal_pad, pady = out_y_pad)
  
     button3 = Button(gui, text=' 3 ', fg='black', bg=bg_number, command=lambda: press(3), height = button_height, width = button_width, font = myfont)
     button3.grid(row=6, column=2, ipady = internal_pad, pady = out_y_pad)
  
-    button0 = Button(gui, text=' 0 ', fg='black', bg=bg_number, command=lambda: press(0), height = button_height, width = button_width, font = myfont)
-    button0.grid(row=7, column=0, ipady = internal_pad, pady = out_y_pad)
+    button_0 = Button(gui, text=' 0 ', fg='black', bg=bg_number, command=lambda: press(0), height = button_height, width = button_width, font = myfont)
+    button_0.grid(row=7, column=0, ipady = internal_pad, pady = out_y_pad)
  
-    plus = Button(gui, text=' + ',  fg=text_clr, bg=bg_operator, command=lambda: press("+"), height = button_height, width = button_width, font = myfont, relief="ridge", borderwidth=3)
-    plus.grid(row=7, column=3, ipady = internal_pad, pady = out_y_pad)
+    piu = Button(gui, text=' + ',  fg=text_clr, bg=bg_operator, command=lambda: press("+"), height = button_height, width = button_width, font = myfont, relief="ridge", borderwidth=3)
+    piu.grid(row=7, column=3, ipady = internal_pad, pady = out_y_pad)
  
-    minus = Button(gui, text=' - ', fg=text_clr, bg=bg_operator, command=lambda: press("-"), height = button_height, width = button_width, font = myfont, relief="ridge", borderwidth=3)
-    minus.grid(row=6, column=3, ipady = internal_pad, pady = out_y_pad)
+    meno = Button(gui, text=' - ', fg=text_clr, bg=bg_operator, command=lambda: press("-"), height = button_height, width = button_width, font = myfont, relief="ridge", borderwidth=3)
+    meno.grid(row=6, column=3, ipady = internal_pad, pady = out_y_pad)
  
-    multiply = Button(gui, text=' * ', fg=text_clr, bg=bg_operator, command=lambda: press("*"), height = button_height, width = button_width, font = myfont, relief="ridge", borderwidth=3)
-    multiply.grid(row=5, column=3, ipady = internal_pad, pady = out_y_pad)
+    per = Button(gui, text=' * ', fg=text_clr, bg=bg_operator, command=lambda: press("*"), height = button_height, width = button_width, font = myfont, relief="ridge", borderwidth=3)
+    per.grid(row=5, column=3, ipady = internal_pad, pady = out_y_pad)
  
-    divide = Button(gui, text=' / ', fg=text_clr, bg=bg_operator, command=lambda: press("/"), height = button_height, width = button_width, font = myfont, relief="ridge", borderwidth=3)
-    divide.grid(row=4, column=3, ipady = internal_pad, pady = out_y_pad)
+    diviso = Button(gui, text=' / ', fg=text_clr, bg=bg_operator, command=lambda: press("/"), height = button_height, width = button_width, font = myfont, relief="ridge", borderwidth=3)
+    diviso.grid(row=4, column=3, ipady = internal_pad, pady = out_y_pad)
  
-    equal = Button(gui, text=' = ', fg=text_clr, bg="light sky blue",  command=equalpress, height = button_height, width = button_width, font = myfont, relief="solid", borderwidth=5)
-    equal.grid(row=7, column=2, ipady = internal_pad, pady = out_y_pad)
+    uguale = Button(gui, text=' = ', fg=text_clr, bg="light sky blue",  command=equalpress, height = button_height, width = button_width, font = myfont, relief="solid", borderwidth=5)
+    uguale.grid(row=7, column=2, ipady = internal_pad, pady = out_y_pad)
  
     clear = Button(gui, text='AC', fg=text_clr, bg="tomato", command=clear, height = button_height, width = button_width, font = myfont, relief="solid", borderwidth=5)
     clear.grid(row=3, column=3, ipady = internal_pad, pady = out_y_pad, columnspan = 2)
  
-    Decimal = Button(gui, text='.', fg=text_clr, bg="PaleGreen1", command=lambda: press('.'), height = button_height, width = button_width, font = myfont)
-    Decimal.grid(row=7, column=1, ipady = internal_pad, pady = out_y_pad)
+    punto = Button(gui, text='.', fg=text_clr, bg="PaleGreen1", command=lambda: press('.'), height = button_height, width = button_width, font = myfont)
+    punto.grid(row=7, column=1, ipady = internal_pad, pady = out_y_pad)
 
     # avvio interfaccia grafica
     gui.mainloop()
