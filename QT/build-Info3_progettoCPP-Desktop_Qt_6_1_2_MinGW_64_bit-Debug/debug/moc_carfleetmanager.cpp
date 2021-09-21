@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_CarFleetManager_t {
-    const uint offsetsAndSize[10];
-    char stringdata0[81];
+    const uint offsetsAndSize[8];
+    char stringdata0[75];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(offsetof(qt_meta_stringdata_CarFleetManager_t, stringdata0) + ofs), len 
@@ -32,12 +32,11 @@ static const qt_meta_stringdata_CarFleetManager_t qt_meta_stringdata_CarFleetMan
 QT_MOC_LITERAL(0, 15), // "CarFleetManager"
 QT_MOC_LITERAL(16, 25), // "on_pulsanteSubmit_clicked"
 QT_MOC_LITERAL(42, 0), // ""
-QT_MOC_LITERAL(43, 31), // "on_tipoAuto_currentIndexChanged"
-QT_MOC_LITERAL(75, 5) // "index"
+QT_MOC_LITERAL(43, 31) // "on_tipoAuto_currentIndexChanged"
 
     },
     "CarFleetManager\0on_pulsanteSubmit_clicked\0"
-    "\0on_tipoAuto_currentIndexChanged\0index"
+    "\0on_tipoAuto_currentIndexChanged"
 };
 #undef QT_MOC_LITERAL
 
@@ -56,11 +55,11 @@ static const uint qt_meta_data_CarFleetManager[] = {
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
        1,    0,   26,    2, 0x08,    0 /* Private */,
-       3,    1,   27,    2, 0x08,    1 /* Private */,
+       3,    0,   27,    2, 0x08,    1 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Int,    4,
+    QMetaType::Void,
 
        0        // eod
 };
@@ -72,10 +71,11 @@ void CarFleetManager::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int 
         (void)_t;
         switch (_id) {
         case 0: _t->on_pulsanteSubmit_clicked(); break;
-        case 1: _t->on_tipoAuto_currentIndexChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 1: _t->on_tipoAuto_currentIndexChanged(); break;
         default: ;
         }
     }
+    (void)_a;
 }
 
 const QMetaObject CarFleetManager::staticMetaObject = { {
@@ -86,7 +86,7 @@ const QMetaObject CarFleetManager::staticMetaObject = { {
     nullptr,
 qt_incomplete_metaTypeArray<qt_meta_stringdata_CarFleetManager_t
 
-, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>
+, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>
 
 
 >,

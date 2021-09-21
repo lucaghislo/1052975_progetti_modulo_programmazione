@@ -100,7 +100,7 @@ void CarFleetManager::on_pulsanteSubmit_clicked() {
  *  Metodo per garantire la coerenza dei campi in funione del
  *  tipo di auto mostrato dal QComboBox
  */
-void CarFleetManager::on_tipoAuto_currentIndexChanged(int index) {
+void CarFleetManager::on_tipoAuto_currentIndexChanged() {
     switch(ui->tipoAuto->currentIndex()) {
     case 0: {
 
