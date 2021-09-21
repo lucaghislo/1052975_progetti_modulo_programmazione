@@ -5,7 +5,7 @@
  Version     : 1.0
  Copyright   : MIT License
  Description : Implementazione della class Garage: sfrutto il concetto di
- Smart Pointers nella forma unique_ptr<>
+               Smart Pointers nella forma unique_ptr<>
  ============================================================================
  */
 

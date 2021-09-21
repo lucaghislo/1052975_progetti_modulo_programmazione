@@ -5,7 +5,7 @@
  Version     : 1.0
  Copyright   : MIT License
  Description : Classe main del progetto, in cui ne viene testato
- il funzionamento
+ 	 	 	   il funzionamento
  ============================================================================
  */
 
