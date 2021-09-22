@@ -68,7 +68,7 @@ object UserBookAnalyzer {
   }
 
   /*
-   * Funzione che stampa le 10 parole da RDD fornito coem parametro
+   * Funzione che stampa le 10 parole da RDD fornito come parametro
    */
   def printWords(array: Array[(Int, String)], url: String) = {
     println("\n*** BOOK ANALYSIS ***\n\nURL: " + url + "\n\n** 10 Most Recurring Words **\n")
