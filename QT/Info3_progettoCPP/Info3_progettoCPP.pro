@@ -10,21 +10,21 @@ CONFIG += c++11
 
 SOURCES += \
     Car.cpp \
+    Carfleetmanager.cpp \
     Ecar.cpp \
     FFcar.cpp \
     Garage.cpp \
     Hcar.cpp \
-    main.cpp \
-    carfleetmanager.cpp
+    main.cpp
 
 HEADERS += \
     Car.h \
+    Carfleetmanager.h \
     Ecar.h \
     FFcar.h \
     Garage.h \
     Hcar.h \
-    TaxCalc.h \
-    carfleetmanager.h
+    TaxCalc.h
 
 FORMS += \
     carfleetmanager.ui
