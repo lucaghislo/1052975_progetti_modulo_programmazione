@@ -8,7 +8,6 @@ from tkinter import messagebox
 
 # variabile globale che rappresenta l'espressione numerica
 expression = ""
-equation = ""
 
 # funzione per l'update dell'espressione sulla base della pressione
 # dei pulsanti (sia numerici che operazionali)
