@@ -1,5 +1,13 @@
-using namespace std;
-#include "carfleetmanager.h"
+/*
+ * Carfleetmanager.cpp
+ * Author: Luca Ghislotti
+ *
+ * File di implementazione delle lambda functions associate
+ * all'interazione dell'utente con l'interfaccia grafica
+ *
+ */
+
+#include "Carfleetmanager.h"
 #include "ui_carfleetmanager.h"
 #include <iostream>
 #include <cstring>
@@ -103,7 +111,6 @@ void CarFleetManager::on_pulsanteSubmit_clicked() {
 void CarFleetManager::on_tipoAuto_currentIndexChanged() {
     switch(ui->tipoAuto->currentIndex()) {
     case 0: {
-
         ui->stdCarica1_input->setEnabled(false);
         ui->stdCarica2_input->setEnabled(false);
         ui->stdCarica3_input->setEnabled(false);

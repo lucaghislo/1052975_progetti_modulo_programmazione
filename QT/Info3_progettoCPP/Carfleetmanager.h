@@ -1,3 +1,13 @@
+/*
+ * Carfleetmanager.h
+ * Author: Luca Ghislotti
+ *
+ * File header in cui sono specificate le segnature delle
+ * lambda function atte ad intercettare l'interazione
+ * dell'utente con l'interfaccia grafica
+ *
+ */
+
 #ifndef CARFLEETMANAGER_H
 #define CARFLEETMANAGER_H
 
