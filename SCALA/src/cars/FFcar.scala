@@ -35,7 +35,7 @@ class FFcar(targa: String, potenza: Int = 100, peso: Int = 1500, var capacitaSer
    * capacitaSerbatoio
    */
   def getCapSerb: Int = capacitaSerbatoio // getter
-  def setCapSerb(newCapSer: Int) = capacitaSerbatoio = newCapSer // setter
+  def setCapSerb(newCapSer: => Int) = capacitaSerbatoio = newCapSer // setter
 
   def getConsumi: Map[String, Double] = consumi // getter Map consumi
 
