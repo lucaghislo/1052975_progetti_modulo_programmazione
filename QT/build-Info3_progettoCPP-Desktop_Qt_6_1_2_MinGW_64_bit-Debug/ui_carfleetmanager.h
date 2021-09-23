@@ -25,8 +25,8 @@ class Ui_CarFleetManager
 public:
     QComboBox *tipoAuto;
     QLineEdit *targa_input;
-    QLineEdit *peso_input;
     QLineEdit *potenza_input;
+    QLineEdit *peso_input;
     QLabel *label_capSerbatoio;
     QLineEdit *capSerb_input;
     QLabel *label_consUrbano;
@@ -63,12 +63,12 @@ public:
         targa_input = new QLineEdit(CarFleetManager);
         targa_input->setObjectName(QString::fromUtf8("targa_input"));
         targa_input->setGeometry(QRect(150, 130, 181, 21));
-        peso_input = new QLineEdit(CarFleetManager);
-        peso_input->setObjectName(QString::fromUtf8("peso_input"));
-        peso_input->setGeometry(QRect(150, 160, 181, 21));
         potenza_input = new QLineEdit(CarFleetManager);
         potenza_input->setObjectName(QString::fromUtf8("potenza_input"));
-        potenza_input->setGeometry(QRect(150, 190, 181, 21));
+        potenza_input->setGeometry(QRect(150, 160, 181, 21));
+        peso_input = new QLineEdit(CarFleetManager);
+        peso_input->setObjectName(QString::fromUtf8("peso_input"));
+        peso_input->setGeometry(QRect(150, 190, 181, 21));
         label_capSerbatoio = new QLabel(CarFleetManager);
         label_capSerbatoio->setObjectName(QString::fromUtf8("label_capSerbatoio"));
         label_capSerbatoio->setGeometry(QRect(20, 250, 121, 21));
