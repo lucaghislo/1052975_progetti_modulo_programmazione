@@ -5,7 +5,7 @@
  Version     : 1.0
  Copyright   : MIT License
  Description : Implementazione della class Garage: sfrutto il concetto di
-               Smart Pointers nella forma unique_ptr<>
+ Smart Pointers nella forma unique_ptr<>
  ============================================================================
  */
 
@@ -27,7 +27,7 @@ Garage::Garage() {
 
 void Garage::newAuto() {
 	string targa;
-	char *targa_ptr = (char*) malloc(sizeof(char) * targa.length());
+	char *targa_ptr = (char*) malloc(sizeof(char) * 9);
 	int peso, potenza;
 
 	cout << "Targa: ";
@@ -41,7 +41,10 @@ void Garage::newAuto() {
 	cout << "Tipo auto: ";
 	cin >> carType;
 
-	strcpy(targa_ptr, targa.data());
+	if (targa.length() == 9)
+		strcpy(targa_ptr, targa.data());
+	else
+		strcpy(targa_ptr, "XX-XXX-XX");
 
 	switch (carType) {
 	// FFcar
@@ -117,6 +120,9 @@ void Garage::newAuto() {
 		 */
 		throw 403; // Error code
 	}
+
+	// deallocazione targa su heap per passaggio parametro costruttore
+	free(targa_ptr);
 }
 
 bool Garage::isElectric(Car *c) {

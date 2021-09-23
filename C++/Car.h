@@ -75,8 +75,8 @@ private:
 	 */
 	char *targa; // targa dell'automobile
 	string *numTelaio; // numero di telaio dell'automobile
-	unsigned short potenza; // potenza dell'automobile (kW)
 	unsigned short peso; // peso dell'auto (Kg)
+	unsigned short potenza; // potenza dell'automobile (kW)
 	static unsigned const short minPotenza = 30; // costante: potenza minima automobile
 	static unsigned int prefix; // prefisso per costruzione numero di telaio
 

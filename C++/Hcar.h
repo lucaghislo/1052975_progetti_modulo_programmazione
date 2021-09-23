@@ -22,7 +22,7 @@
  * problema del diamante, dichiarando Car come classe base
  * virtual sia per Ecar che per FFcar
  */
-class Hcar: public Ecar, public FFcar {
+class Hcar: public FFcar, public Ecar {
 public:
 	Hcar(char *targaInput, int pesoInput, int potenzaInput, short capInput,
 			double urbano, double combinato, double extra,

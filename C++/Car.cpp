@@ -40,8 +40,7 @@ Car::Car() {
 	*numTelaio = buildVIN(prefix); // VIN generico pre-costruzione
 
 	potenza = minPotenza; // auto pre-immatricolata ha potenza di default
-
-	peso = 1000;
+	peso = 1000; // peso di default
 
 	/*
 	 * Incremento del prefisso dopo la creazione dell'auto
@@ -55,9 +54,12 @@ Car::Car() {
  */
 Car::Car(char *targaInput, int pesoInput, int potenzaInput) :
 		peso(pesoInput), potenza(potenzaInput) {
+
 	// Allocazione area di memoria su heap per salvataggio targa
-	targa = (char*) malloc(sizeof(char) * 9);
-	strcpy(targa, targaInput); // targa definita da parametro
+	targa = strcpy((char*) malloc(sizeof(char) * 9), "XX-XXX-XX");
+
+	if (strlen(targaInput) == 9)
+		strcpy(targa, targaInput); // targa definita da parametro
 
 	try {
 		// Allocazione area di memoria su heap per salvataggio numero di telaio
