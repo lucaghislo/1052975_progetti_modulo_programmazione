@@ -48,7 +48,7 @@
     </rect>
    </property>
   </widget>
-  <widget class="QLineEdit" name="peso_input">
+  <widget class="QLineEdit" name="potenza_input">
    <property name="geometry">
     <rect>
      <x>150</x>
@@ -58,7 +58,7 @@
     </rect>
    </property>
   </widget>
-  <widget class="QLineEdit" name="potenza_input">
+  <widget class="QLineEdit" name="peso_input">
    <property name="geometry">
     <rect>
      <x>150</x>

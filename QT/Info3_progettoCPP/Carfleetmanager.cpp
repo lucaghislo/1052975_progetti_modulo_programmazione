@@ -54,7 +54,7 @@ void CarFleetManager::on_pulsanteSubmit_clicked() {
 
     std::string targa = Qtarga.toLocal8Bit().constData();
 
-    if(targa.compare("") == 0)
+    if(targa.compare("") == 0 || targa.length() > 7)
        targa = "XX-XXX-XX";
 
     char *targa_ptr = (char*) malloc(sizeof(char) * targa.length());
