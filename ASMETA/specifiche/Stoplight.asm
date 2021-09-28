@@ -23,7 +23,7 @@
                L'aspetto critico è rappresentanto dalla sequenza temporale 
                con cui i colori si presentano: 
                
-               VERDE -> ARANCIONE -> ROSSO -> VERDE
+               ROSSO -> VERDE -> ARANCIONE -> ROSSO
  ============================================================================
  */
  
