@@ -6,11 +6,10 @@
  Version     : 1.0
  Copyright   : MIT License
  Description : All'utente viene richiesto ad inoltranza di inserire auto:
-	             alla creazione, vengono inserite in un vector di cui viene
-	             restuito lo smart pointer all'istanza di Car (una delle sue
-	             classi derivate) e vengono stampate le informazioni associate
-	             all'intera flotta tramite la funzione stampaFlotta() che
-	             sfrutta showInfo() specializzata per ciascun tipo di auto
+	             alla creazione, vengono inserite in un ListBuffer e vengono 
+	             stampate le informazioni associate all'intera flotta tramite 
+	             la funzione stampaFlotta() che sfrutta showInfo() 
+	             specializzata per ciascun tipo di auto
  ============================================================================
  */
 
